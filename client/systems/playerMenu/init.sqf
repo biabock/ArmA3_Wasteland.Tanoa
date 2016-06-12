@@ -20,7 +20,7 @@ _rogue = _Dialog displayCtrl rogue_text;
 _uptime = _Dialog displayCtrl uptime_text;
 _groupButton = _Dialog displayCtrl groupButton;
 _foodtext ctrlSetText format["TS: ts.armabrothers.com"];
-_watertext ctrlSettext format["Arma Brothers - Wasteland Altis"];
+_watertext ctrlSettext format["Arma Brothers - Wasteland Tanoa"];
 _moneytext ctrlSetText format["%1", [player getVariable ["cmoney", 0]] call fn_numbersText];
 
 {

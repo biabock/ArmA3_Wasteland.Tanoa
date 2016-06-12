@@ -106,7 +106,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _veh1 >> "picture");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh1 >> "displayName");
 
-	_missionHintText = format ["Drugs runners driving a <t color='%2'>%1</t> are moving drugs around Altis. Stop them quickly!", _vehicleName, sideMissionColor];
+	_missionHintText = format ["Drugs runners driving a <t color='%2'>%1</t> are moving drugs around Tanoa. Stop them quickly!", _vehicleName, sideMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };

@@ -171,9 +171,9 @@ SideMissions =
 	//["mission_WepCache", 1],
 	["mission_Outpost", 1],
 	["mission_Truck", 1],
-	["mission_Roadblock", 1],
+	//["mission_Roadblock", 1],
 	["mission_HostileJet", 0.5],
-	["mission_Sniper", 1],
+	//["mission_Sniper", 1],
 	["mission_Smugglers", 1],
 	["mission_drugsRunners", 1],
 	["mission_GeoCache", 1]

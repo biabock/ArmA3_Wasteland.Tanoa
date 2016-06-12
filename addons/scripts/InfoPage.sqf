@@ -9,7 +9,7 @@
 sleep 30;   //delay before message is displayed after logging in
 	
 _text = "
-<t align='center'><t shadow= 1 shadowColor='#000000'><t size='1.2'><t color='#ddbb22'>ArmaBrothers.com Wasteland Altis</t>
+<t align='center'><t shadow= 1 shadowColor='#000000'><t size='1.2'><t color='#ddbb22'>ArmaBrothers.com Wasteland Tanoa</t>
 <br />
 <t align='center'><t size='1'><t shadow= 1 shadowColor='#000000'>www.ArmaBrothers.com</t><br />
 <t align='center'><t size='1'><t shadow= 1 shadowColor='#000000'>ts.armabrothers.com</t><br />
