@@ -130,7 +130,7 @@ lmgArray = compileFinal str
 
 launcherArray = compileFinal str
 [
-	["RPG-7 [DLC]", "launch_RPG7_F", 350],
+	["RPG-7 [DLC]", "launch_RPG7_F", 2500],
 
 	["RPG-42 Alamut", "launch_RPG32_F", 1000],
 	["PCML", "launch_NLAW_F", 2500],
@@ -484,8 +484,8 @@ uniformArray = compileFinal str
 	["Light Ghillie", "U_O_GhillieSuit", 200, "uni"],
 	["Light Ghillie", "U_I_GhillieSuit", 200, "uni"],
 
-	["Light Ghillie (Jungle) [DLC]", "U_B_T_Sniper_F", 200, "uni"],
-	["Light Ghillie (Jungle) [DLC]", "U_O_T_Sniper_F", 200, "uni"],
+	["Light Ghillie (Jungle) [DLC]", "U_B_T_Sniper_F", 2000, "uni"],
+	["Light Ghillie (Jungle) [DLC]", "U_O_T_Sniper_F", 2000, "uni"],
 
 	["Full Ghillie (Arid) [DLC]", "U_B_FullGhillie_ard", 2000, "uni"],
 	["Full Ghillie (Arid) [DLC]", "U_O_FullGhillie_ard", 2000, "uni"],
@@ -867,7 +867,7 @@ helicoptersArray = compileFinal str
 	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 450000, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman", "O_Heli_Attack_02_F", 400000, "vehicle"], // Mi-28 with gunner
 
-	["MQ-12 Falcon UAV [DLC]", "B_T_UAV_03_F", 50000, "vehicle"]
+	["MQ-12 Falcon UAV [DLC]", "B_T_UAV_03_F", 100000, "vehicle"]
 ];
 
 planesArray = compileFinal str
@@ -888,7 +888,7 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 300000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 290000, "vehicle"],
 
-	["KH-3A Fenghuang UAV [DLC]", "O_T_UAV_04_CAS_F", 20000, "vehicle"]
+	["KH-3A Fenghuang UAV [DLC]", "O_T_UAV_04_CAS_F", 100000, "vehicle"]
 ];
 
 boatsArray = compileFinal str
