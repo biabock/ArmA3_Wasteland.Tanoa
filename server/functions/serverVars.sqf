@@ -23,7 +23,6 @@ civilianVehicles =
 [
 	"C_Quadbike_01_F",
 	"C_Hatchback_01_F",
-	"C_Offroad_02_unarmed_F",
 	"C_SUV_01_F",
 	"C_Offroad_01_F",
 	"I_G_Offroad_01_F",
