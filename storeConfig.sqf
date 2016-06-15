@@ -889,6 +889,7 @@ helicoptersArray = compileFinal str
 	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 150000, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman", "O_Heli_Attack_02_F", 140000, "vehicle"], // Mi-28 with gunner
 
+	["Y-32 Xi'an [DLC]", "O_T_VTOL_02_infantry_F", 60000, "vehicle"],
 	["MQ-12 Falcon UAV [DLC]", "B_T_UAV_03_F", 50000, "vehicle"]
 ];
 
@@ -903,7 +904,6 @@ planesArray = compileFinal str
 
 	["V-44 X Blackfish (Infantry) [DLC]", "B_T_VTOL_01_infantry_F", 20000, "vehicle"],
 	["V-44 X Blackfish (Gunship) [DLC]", "B_T_VTOL_01_armed_F", 60000, "vehicle"],
-	["Y-32 Xi'an [DLC]", "O_T_VTOL_02_infantry_F", 60000, "vehicle"],
 
 	["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 80000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 70000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones

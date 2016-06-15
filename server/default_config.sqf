@@ -21,7 +21,7 @@ A3W_timeMultiplierNight = 12.0;     // Sets the speed of time between 8 PM and 5
 A3W_moonLight = 1;                 // Moon light during night (0 = no, 1 = yes)
 
 // Player settings
-A3W_startingMoney = 1000;          // Amount of money that players start with
+A3W_startingMoney = 2000;          // Amount of money that players start with
 A3W_survivalSystem = 0;            // Food and water are required to stay alive (0 = no, 1 = yes) - 0 removes food and water items from the mission,
 A3W_unlimitedStamina = 1;          // Allow unlimited sprinting, jumping, etc. (0 = no, 1 = yes) - this also removes energy drinks from the mission
 A3W_bleedingTime = 180;            // Time in seconds for which to allow revive after a critical injury (minimum 10 seconds)
@@ -147,9 +147,9 @@ A3W_moneyMissionTimeout = 60*60;   // Time in seconds that a Money Mission will 
 MainMissions =
 [
 	// Mission filename, weight
-	["mission_ArmedDiversquad", 1],
+	//["mission_ArmedDiversquad", 1],
 	["mission_Coastal_Convoy", 0.5],
-	["mission_Convoy", 1],
+	//["mission_Convoy", 1],
 	["mission_Hackers", 0.5],
 	["mission_HostileHeliFormation", 0.5],
 	["mission_HostileJetFormation", 0.5],
@@ -164,7 +164,7 @@ MainMissions =
 SideMissions =
 [
 	["mission_HostileHelicopter", 0.5],
-	["mission_MiniConvoy", 1],
+	//["mission_MiniConvoy", 1],
 	["mission_SunkenSupplies", 1],
 	["mission_TownInvasion", 1],
 	//["mission_AirWreck", 1],
