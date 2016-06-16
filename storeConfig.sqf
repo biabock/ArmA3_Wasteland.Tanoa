@@ -412,7 +412,7 @@ headArray = compileFinal str
 	["Combat Helmet (Camonet)", "H_HelmetB_camo", 50, "hat"],
 
 	["Stealth Combat Helmet", "H_HelmetB_TI_tna_F", 75, "hat"],
-	["Special Combat Helmet [DLC]", "H_HelmetO_ViperSP_hex_F", 50000, "hat"],
+	["Special Combat Helmet", "H_HelmetO_ViperSP_hex_F", 50000, "hat"],
 
 	["Enhanced Combat Helmet", "H_HelmetSpecB", 75, "hat"],
 	["Enhanced Combat Helmet (Black)", "H_HelmetSpecB_blk", 75, "hat"],
@@ -529,21 +529,21 @@ uniformArray = compileFinal str
 	["Light Ghillie", "U_O_GhillieSuit", 200, "uni"],
 	["Light Ghillie", "U_I_GhillieSuit", 200, "uni"],
 
-	["Light Ghillie (Jungle) [DLC]", "U_B_T_Sniper_F", 200, "uni"],
-	["Light Ghillie (Jungle) [DLC]", "U_O_T_Sniper_F", 200, "uni"],
+	["Light Ghillie (Jungle)", "U_B_T_Sniper_F", 200, "uni"],
+	["Light Ghillie (Jungle)", "U_O_T_Sniper_F", 200, "uni"],
 
-	["Full Ghillie (Arid) [DLC]", "U_B_FullGhillie_ard", 400, "uni"],
-	["Full Ghillie (Arid) [DLC]", "U_O_FullGhillie_ard", 400, "uni"],
-	["Full Ghillie (Arid) [DLC]", "U_I_FullGhillie_ard", 400, "uni"],
-	["Full Ghillie (Lush) [DLC]", "U_B_FullGhillie_lsh", 400, "uni"],
-	["Full Ghillie (Lush) [DLC]", "U_O_FullGhillie_lsh", 400, "uni"],
-	["Full Ghillie (Lush) [DLC]", "U_I_FullGhillie_lsh", 400, "uni"],
-	["Full Ghillie (Semi-Arid) [DLC]", "U_B_FullGhillie_sard", 400, "uni"],
-	["Full Ghillie (Semi-Arid) [DLC]", "U_O_FullGhillie_sard", 400, "uni"],
-	["Full Ghillie (Semi-Arid) [DLC]", "U_I_FullGhillie_sard", 400, "uni"],
+	["Full Ghillie (Arid)", "U_B_FullGhillie_ard", 400, "uni"],
+	["Full Ghillie (Arid)", "U_O_FullGhillie_ard", 400, "uni"],
+	["Full Ghillie (Arid)", "U_I_FullGhillie_ard", 400, "uni"],
+	["Full Ghillie (Lush)", "U_B_FullGhillie_lsh", 400, "uni"],
+	["Full Ghillie (Lush)", "U_O_FullGhillie_lsh", 400, "uni"],
+	["Full Ghillie (Lush)", "U_I_FullGhillie_lsh", 400, "uni"],
+	["Full Ghillie (Semi-Arid)", "U_B_FullGhillie_sard", 400, "uni"],
+	["Full Ghillie (Semi-Arid)", "U_O_FullGhillie_sard", 400, "uni"],
+	["Full Ghillie (Semi-Arid)", "U_I_FullGhillie_sard", 400, "uni"],
 
-	["Full Ghillie (Jungle) [DLC]", "U_B_T_FullGhillie_tna_F", 400, "uni"],
-	["Full Ghillie (Jungle) [DLC]", "U_O_T_FullGhillie_tna_F", 400, "uni"],
+	["Full Ghillie (Jungle)", "U_B_T_FullGhillie_tna_F", 400, "uni"],
+	["Full Ghillie (Jungle)", "U_O_T_FullGhillie_tna_F", 400, "uni"],
 	["CTRG Stealth Uniform", "U_B_CTRG_Soldier_F", 1000, "uni"],
 	["Special Purpose Suit (Hex)", "U_O_V_Soldier_Viper_hex_F", 1000, "uni"],
 	["Special Purpose Suit (G Hex)", "U_O_V_Soldier_Viper_F", 1000, "uni"],
@@ -561,8 +561,8 @@ uniformArray = compileFinal str
 	["CTRG Combat Uniform (Tee)", "U_B_CTRG_2", 25, "uni"],
 	["CTRG Combat Uniform (Rolled-up)", "U_B_CTRG_3", 25, "uni"],
 
-	["Fatigues (Green Hex) [DLC]", "U_O_T_Soldier_F", 25, "uni"],
-	["Gendarmerie [DLC]", "U_B_GEN_Soldier_F", 50, "uni"],
+	["Fatigues (Green Hex)", "U_O_T_Soldier_F", 25, "uni"],
+	["Gendarmerie", "U_B_GEN_Soldier_F", 50, "uni"],
 
 	["Fatigues (Hex)", "U_O_CombatUniform_ocamo", 50, "uni"],
 	["Fatigues (Urban)", "U_O_CombatUniform_oucamo", 50, "uni"],
@@ -689,15 +689,15 @@ backpackArray = compileFinal str
 	["Kitbag (MTP)", "B_Kitbag_mcamo", 350, "backpack"],
 	["Kitbag (Sage)", "B_Kitbag_sgg", 350, "backpack"],
 
+	["Viper Harness (Olive)", "B_ViperHarness_oli_F", 800, "backpack"],
+	["Viper Harness (Hex)", "B_ViperHarness_hex_F", 800, "backpack"],
+	["Viper Harness (Green)", "B_ViperHarness_ghex_F", 800, "backpack"],
+
 	["Carryall (Khaki)", "B_Carryall_khk", 500, "backpack"],
 	["Carryall (MTP)", "B_Carryall_mcamo", 500, "backpack"],
 	["Carryall (Olive)", "B_Carryall_oli", 500, "backpack"],
 	["Carryall (Urban)", "B_Carryall_oucamo", 500, "backpack"],
 	["Carryall (G Hex)", "B_Carryall_ghex_F", 500, "backpack", "noDLC"],
-	
-	["Viper Harness (Olive)", "B_ViperHarness_oli_F", 800, "backpack"],
-	["Viper Harness (Hex)", "B_ViperHarness_hex_F", 800, "backpack"],
-	["Viper Harness (Green)", "B_ViperHarness_ghex_F", 800, "backpack"],
 
 	["Bergen (Digital)", "B_Bergen_dgtl_F", 1000, "backpack", "noDLC"],
 	["Bergen (Hex)", "B_Bergen_hex_F", 1000, "backpack", "noDLC"],
@@ -728,9 +728,9 @@ genItemArray = compileFinal str
 	["Compact NVG (Hex)", "O_NVGoggles_hex_F", 150, "nvg"],
 	["Compact NVG (G Hex)", "O_NVGoggles_ghex_F", 150, "nvg"],
 	["Compact NVG (Urban)", "O_NVGoggles_urb_F", 150, "nvg"],
-	["Improved NVG (Black) [DLC]", "NVGogglesB_blk_F", 40000, "nvg"],
-	["Improved NVG (Green) [DLC]", "NVGogglesB_grn_F", 40000, "nvg"],
-	["Improved NVG (Grey) [DLC]", "NVGogglesB_gry_F", 40000, "nvg"],
+	["Improved NVG (Black)", "NVGogglesB_blk_F", 40000, "nvg"],
+	["Improved NVG (Green)", "NVGogglesB_grn_F", 40000, "nvg"],
+	["Improved NVG (Grey)", "NVGogglesB_gry_F", 40000, "nvg"],
 	["Diving Goggles", "G_Diving", 100, "gogg"],
 	["Binoculars", "Binocular", 50, "binoc"],
 	["Rangefinder", "Rangefinder", 150, "binoc"],
@@ -962,7 +962,7 @@ helicoptersArray = compileFinal str
 	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 150000, "vehicle"], // RAH-66 with gunner
 	["Mi-48 Kajman", "O_Heli_Attack_02_F", 140000, "vehicle"], // Mi-28 with gunner
 
-	["MQ-12 Falcon UAV(CONTROLS BUGGED)", "B_T_UAV_03_F", 50000, "vehicle"]
+	["MQ-12 Falcon UAV", "B_T_UAV_03_F", 50000, "vehicle"]
 ];
 
 planesArray = compileFinal str
@@ -985,7 +985,7 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 80000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 70000, "vehicle"],
 
-	["KH-3A Fenghuang UAV(CONTROLS BUGGED)", "O_T_UAV_04_CAS_F", 80000, "vehicle"]
+	["KH-3A Fenghuang UAV", "O_T_UAV_04_CAS_F", 80000, "vehicle"]
 ];
 
 boatsArray = compileFinal str
