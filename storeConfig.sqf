@@ -90,7 +90,7 @@ rifleArray = compileFinal str
 	["MXM Rifle", "arifle_MXM_F", 300],
 	["MXM Rifle (Black)", "arifle_MXM_Black_F", 300],
 	["MXM Rifle (Khaki)", "arifle_MXM_khk_F", 300, "noDLC"],
-	["DMR Rifle", "srifle_DMR_01_F", 375],
+	["Rahim DMR Rifle", "srifle_DMR_01_F", 375],
 	["Mk18 ABR Rifle", "srifle_EBR_F", 450],
 
 	// DLC
@@ -377,7 +377,7 @@ accessoriesArray = compileFinal str
 	["MOS", "optic_SOS", 150, "item"],
 	["MOS (Khaki)", "optic_SOS_khk_F", 150, "item"],
 	["DMS", "optic_DMS", 175, "item"],
-	["DMS  (hex)", "optic_DMS_ghex_F", 200, "item"],
+	["DMS (G Hex)", "optic_DMS_ghex_F", 175, "item"],
 	["Kahlia (Sightless)", "optic_KHS_old", 200, "item"],
 	["Kahlia", "optic_KHS_blk", 225, "item"],
 	["Kahlia (Hex)", "optic_KHS_hex", 225, "item"],
@@ -689,9 +689,17 @@ backpackArray = compileFinal str
 	["Kitbag (MTP)", "B_Kitbag_mcamo", 350, "backpack"],
 	["Kitbag (Sage)", "B_Kitbag_sgg", 350, "backpack"],
 
-	["Viper Harness (Olive)", "B_ViperHarness_oli_F", 800, "backpack"],
-	["Viper Harness (Hex)", "B_ViperHarness_hex_F", 800, "backpack"],
-	["Viper Harness (Green)", "B_ViperHarness_ghex_F", 800, "backpack"],
+	["Viper Light Harness (Black)", "B_ViperLightHarness_blk_F", 350, "backpack", "noDLC"],
+	["Viper Light Harness (Hex)", "B_ViperLightHarness_hex_F", 350, "backpack", "noDLC"],
+	["Viper Light Harness (G Hex)", "B_ViperLightHarness_ghex_F", 350, "backpack", "noDLC"],
+	["Viper Light Harness (Khaki)", "B_ViperLightHarness_khk_F", 350, "backpack", "noDLC"],
+	["Viper Light Harness (Olive)", "B_ViperLightHarness_oli_F", 350, "backpack", "noDLC"],
+
+	["Viper Harness (Black)", "B_ViperHarness_blk_F", 425, "backpack", "noDLC"],
+	["Viper Harness (Hex)", "B_ViperHarness_hex_F", 425, "backpack", "noDLC"],
+	["Viper Harness (G Hex)", "B_ViperHarness_ghex_F", 425, "backpack", "noDLC"],
+	["Viper Harness (Khaki)", "B_ViperHarness_khk_F", 425, "backpack", "noDLC"],
+	["Viper Harness (Olive)", "B_ViperHarness_oli_F", 425, "backpack", "noDLC"],
 
 	["Carryall (Khaki)", "B_Carryall_khk", 500, "backpack"],
 	["Carryall (MTP)", "B_Carryall_mcamo", 500, "backpack"],
@@ -745,9 +753,9 @@ genItemArray = compileFinal str
 	["Chemlight (Yellow)", "Chemlight_yellow", 25, "mag"],
 	["Chemlight (Red)", "Chemlight_red", 25, "mag"],
 
-	["Stealth Balaclava (Black)", "G_Balaclava_TI_blk_F", 250, "gogg"],
+	["Stealth Balaclava (Black)", "G_Balaclava_TI_blk_F", 200, "gogg"],
 	["Stealth Balaclava (Black, Goggles)", "G_Balaclava_TI_G_blk_F", 250, "gogg"],
-	["Stealth Balaclava (Green)", "G_Balaclava_TI_tna_F", 250, "gogg"],
+	["Stealth Balaclava (Green)", "G_Balaclava_TI_tna_F", 200, "gogg"],
 	["Stealth Balaclava (Green, Goggles)", "G_Balaclava_TI_G_tna_F", 250, "gogg"],
 	["Combat Goggles", "G_Combat", 25, "gogg"],
 	["Combat Goggles (Green)", "G_Combat_Goggles_tna_F", 25, "gogg", "noDLC"],
@@ -857,7 +865,8 @@ landArray = compileFinal str
 	["Offroad Repair", "C_Offroad_01_repair_F", 1500, "vehicle"],
 	["Offroad HMG", "B_G_Offroad_01_armed_F", 2500, "vehicle"],
 
-	["MB 4WD", "C_Offroad_02_unarmed_F", 1500, "vehicle"],
+	["MB 4WD", "C_Offroad_02_unarmed_F", 1000, "vehicle"],
+	["MB 4WD (Guerilla)", "I_C_Offroad_02_unarmed_F", 900, "vehicle"],
 
 	["Truck", "C_Van_01_transport_F", 700, "vehicle"],
 	["Truck (Camo)", "B_G_Van_01_transport_F", 800, "vehicle"],
@@ -1033,7 +1042,6 @@ _texDir = "client\images\vehicleTextures\";
 _kartDir = "\A3\soft_f_kart\Kart_01\Data\";
 _mh9Dir = "\A3\air_f\Heli_Light_01\Data\";
 _mohawkDir = "\A3\air_f_beta\Heli_Transport_02\Data\";
-_taruDir = "\A3\air_f_heli\Heli_Transport_04\Data\";
 _wreckDir = "\A3\structures_f\wrecks\data\";
 _gorgonDir = "\A3\armor_f_gamma\APC_Wheeled_03\data\";
 
@@ -1100,13 +1108,13 @@ colorsArray = compileFinal str
 	[ // Kart colors
 		"Kart_01_Base_F",
 		[
-			["Black (Kart)", [[0, _kartDir + "kart_01_base_black_co.paa"]]],
-			["White (Kart)", [[0, _kartDir + "kart_01_base_white_co.paa"]]],
-			["Blue (Kart)", [[0, _kartDir + "kart_01_base_blue_co.paa"]]],
-			["Green (Kart)", [[0, _kartDir + "kart_01_base_green_co.paa"]]],
-			["Yellow (Kart)", [[0, _kartDir + "kart_01_base_yellow_co.paa"]]],
-			["Orange (Kart)", [[0, _kartDir + "kart_01_base_orange_co.paa"]]],
-			["Red (Kart)", [[0, _kartDir + "kart_01_base_red_co.paa"]]]
+			["Black (Kart)", ["Black"]], // ["Black (Kart)", [configName (configFile >> "CfgVehicles" >> "C_Kart_01_F" >> "TextureSources" >> "Black")]],
+			["White (Kart)", ["White"]],
+			["Blue (Kart)", ["Blue"]],
+			["Green (Kart)", ["Green"]],
+			["Yellow (Kart)", ["Yellow"]],
+			["Orange (Kart)", ["Orange"]],
+			["Red (Kart)", [[0, _kartDir + "kart_01_base_red_co.paa"]]] // no red TextureSource :(
 		]
 	],
 	[ // MH-9 colors
@@ -1147,36 +1155,16 @@ colorsArray = compileFinal str
 			]]
 		]
 	],
-	[ // Taru base colors
+	[ // Taru paintjob
 		"Heli_Transport_04_base_F",
 		[
-			["Black (Taru)", [
-				[0, _taruDir + "heli_transport_04_base_01_black_co.paa"],
-				[1, _taruDir + "heli_transport_04_base_02_black_co.paa"],
-				[2, _taruDir + "heli_transport_04_pod_ext01_black_co.paa"],
-				[3, _taruDir + "heli_transport_04_pod_ext02_black_co.paa"]
-			]]
-		]
-	],
-	[ // Taru bench colors
-		"O_Heli_Transport_04_bench_F",
-		[
-			["Black (Taru)", [[2, _taruDir + "heli_transport_04_bench_black_co.paa"]]]
-		]
-	],
-	[ // Taru fuel colors
-		"O_Heli_Transport_04_fuel_F",
-		[
-			["Black (Taru)", [[2, _taruDir + "heli_transport_04_fuel_black_co.paa"]]]
+			["Black (Taru)", ["Black"]]
 		]
 	],
 	[ // Kajman paintjobs
 		"Heli_Attack_02_base_F",
 		[
-			["Black (Kajman)", [
-				[0, "\A3\air_f_beta\Heli_Attack_02\Data\heli_attack_02_body1_black_co.paa"],
-				[1, "\A3\air_f_beta\Heli_Attack_02\Data\heli_attack_02_body2_black_co.paa"]
-			]],
+			["Black (Kajman)", ["Black"]],
 			["Rusty (Kajman)", [
 				[0, _wreckDir + "wreck_heli_attack_02_body1_co.paa"],
 				[1, _wreckDir + "wreck_heli_attack_02_body2_co.paa"]
@@ -1190,25 +1178,22 @@ colorsArray = compileFinal str
 	[ // Ghost Hawk camo
 		"Heli_Transport_01_base_F",
 		[
-			["Olive (Ghost Hawk)", [
-				[0, "\A3\air_f_beta\Heli_Transport_01\Data\heli_transport_01_ext01_blufor_co.paa"],
-				[1, "\A3\air_f_beta\Heli_Transport_01\Data\heli_transport_01_ext02_blufor_co.paa"]
-			]]
+			//["Black (Ghost Hawk)", ["Black"]], // default
+			["Olive (Ghost Hawk)", ["Green"]],
+			["Dazzle Black (Ghost Hawk)", ["Olive"]],
+			["Dazzle Tan (Ghost Hawk)", ["Sand"]]
 		]
 	],
 	[ // Strider NATO color
 		"MRAP_03_base_F",
 		[
-			["NATO Tan (Strider)", [
-				[0, "\A3\soft_f_beta\MRAP_03\Data\mrap_03_ext_co.paa"],
-				[1, "\A3\data_f\vehicles\turret_co.paa"]
-			]]
+			["Tan (Strider)", ["Blufor"]]
 		]
 	],
 	[ // Gorgon NATO color
 		"APC_Wheeled_03_base_F",
 		[
-			["NATO Tan (Gorgon)", [
+			["Tan (Gorgon)", [
 				[0, _gorgonDir + "apc_wheeled_03_ext_co.paa"],
 				[1, _gorgonDir + "apc_wheeled_03_ext2_co.paa"],
 				[2, _gorgonDir + "rcws30_co.paa"],
@@ -1220,6 +1205,77 @@ colorsArray = compileFinal str
 		"Hatchback_01_base_F",
 		[
 			["Rusty (Hatchback)", [[0, _wreckDir + "civilcar_extwreck_co.paa"]]]
+		]
+	],
+	[ // Prowler paintjobs
+		"LSV_01_base_F",
+		[
+			["Olive (Prowler)", ["Olive"]],
+			["Dazzle (Prowler)", ["Dazzle"]],
+			["Black (Prowler)", ["Black"]],
+			["Tan (Prowler)", ["Sand"]]
+		]
+	],
+	[ // Qilin paintjobs
+		"LSV_02_base_F",
+		[
+			//["Green Hex (Qilin)", ["GreenHex"]], // default
+			["Hex (Qilin)", ["Arid"]],
+			["Black (Qilin)", ["Black"]]
+		]
+	],
+	[ // Blackfish paintjobs
+		"VTOL_01_base_F",
+		[
+			//["Olive (Blackfish)", ["Olive"]], // default
+			["Blue (Blackfish)", ["Blue"]]
+		]
+	],
+	[ // Xi'an paintjobs
+		"VTOL_02_base_F",
+		[
+			//["Green Hex (Xi'an)", ["GreenHex"]], // default
+			["Hex (Xi'an)", ["Hex"]],
+			["Gray Hex (Xi'an)", ["Grey"]]
+		]
+	],
+	[ // UGV paintjobs
+		"UGV_01_base_F",
+		[
+			["Tan (UGV)", ["Blufor"]],
+			["Hex (UGV)", ["Opfor"]],
+			["Digital (UGV)", ["Indep"]],
+			["Green Hex (UGV))", ["GreenHex"]]
+		]
+	],
+	[ // Ifrit GreenHex
+		"MRAP_02_base_F",
+		[
+			["Green Hex (Ifrit)", ["GreenHex"]]
+		]
+	],
+	[ // Tempest GreenHex
+		"Truck_03_base_F",
+		[
+			["Green Hex (Tempest)", ["GreenHex"]]
+		]
+	],
+	[ // Marid GreenHex
+		"APC_Wheeled_02_base_F",
+		[
+			["Green Hex (Marid)", ["GreenHex"]]
+		]
+	],
+	[ // Kamysh & Tigris GreenHex
+		"APC_Tracked_02_base_F",
+		[
+			["Green Hex (Kamysh)", ["GreenHex"]]
+		]
+	],
+	[ // Varsuk & Sochor GreenHex
+		"MBT_02_base_F",
+		[
+			["Green Hex (Varsuk)", ["GreenHex"]]
 		]
 	]
 ];
