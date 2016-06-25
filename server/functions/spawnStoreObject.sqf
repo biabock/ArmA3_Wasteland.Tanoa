@@ -181,7 +181,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				_object setVariable ["A3W_purchasedVehicle", true, true];
 			};
 		
-			if (_object isKindOf "AllVehicles" && !({_object isKindOf _x} count ["StaticWeapon","UAV_02_base_F","UGV_01_base_F"] > 0)) then
+			if (_object isKindOf "AllVehicles" && !({_object isKindOf _x} count ["StaticWeapon","UAV_02_base_F","UGV_01_base_F","B_T_UAV_03_F","O_T_UAV_04_CAS_F"] > 0)) then
 			{
 				_object engineOn true; // Lets already turn the engine one to see if it fixes exploding vehicles.
 				_object lock 2; // Spawn vehicles in locked
