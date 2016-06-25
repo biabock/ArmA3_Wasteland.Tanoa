@@ -15,9 +15,9 @@ A3W_disableUavFeed = 0;            // Force disable UAV PIP feed to prevent ther
 A3W_disableBuiltInThermal = 0;     // Display a black screen if the player tries to use thermal vision built-in a handheld weapon like Titan launcher or laser designator (0 = no, 1 = yes)
 
 // Time settings
-A3W_startHour = 6;                // In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
+A3W_startHour = 7;                // In-game hour at mission start (0 to 23) - time is saved and restored between server restarts if A3W_timeSaving = 1
 A3W_timeMultiplierDay = 6.0;       // Sets the speed of time between 5 AM and 8 PM (for example, 6.0 means 6 hours in-game will pass in 1 real hour)
-A3W_timeMultiplierNight = 12.0;     // Sets the speed of time between 8 PM and 5 AM
+A3W_timeMultiplierNight = 18.0;     // Sets the speed of time between 8 PM and 5 AM
 A3W_moonLight = 1;                 // Moon light during night (0 = no, 1 = yes)
 
 // Player settings
@@ -29,8 +29,8 @@ A3W_headshotNoRevive = 1;          // Instant death on fatal headshot by enemy p
 A3W_customDeathMessages = 0;       // If difficulty option deathMessages=0, display custom messages related to causes of death, as defined in fn_deathMessage.sqf (0 = no, 1 = yes)
 
 // Spawn settings
-A3W_townSpawnCooldown = 1*60;      // Number of seconds to wait between each spawn on a specific town (0 = disabled)
-A3W_spawnBeaconCooldown = 3*60;    // Number of seconds to wait between each use of a specific spawn beacon (0 = disabled)
+A3W_townSpawnCooldown = 3*60;      // Number of seconds to wait between each spawn on a specific town (0 = disabled)
+A3W_spawnBeaconCooldown = 5*60;    // Number of seconds to wait between each use of a specific spawn beacon (0 = disabled)
 A3W_spawnBeaconSpawnHeight = 1500; // Altitude in meters at which players will spawn when using spawn beacons (0 = ground/sea)
 
 // Antihack settings
@@ -47,7 +47,7 @@ A3W_vehiclePurchaseCooldown = 30;  // Number of seconds to wait before allowing 
 // ATM settings
 A3W_atmEnabled = 1;                // Enable ATM system (0 = no, 1 = yes)
 A3W_atmMaxBalance = 2000000;       // Maximum amount of money that can be stored in a bank account (don't go over 16777216 as numbers start losing accuracy)
-A3W_atmTransferFee = 5;            // Fee in percent charged to players for money transfers to other players (0 to 50)
+A3W_atmTransferFee = 0;            // Fee in percent charged to players for money transfers to other players (0 to 50)
 A3W_atmTransferAllTeams = 1;       // Allow money transfers between players of all teams/sides (0 = same team only, 1 = all teams)
 A3W_atmEditorPlacedOnly = 0;       // Only allow access via ATMs placed from the mission editor (0 = all ATMs from towns & editor allowed, 1 = ATMs from editor only) Note: Stratis has no town ATMs, only editor ones.
 A3W_atmMapIcons = 1;               // Draw small icons on the map that indicate ATM locations (0 = no, 1 = yes)
@@ -69,7 +69,7 @@ A3W_staticWeaponSaving = 1;        // Save locked static weapons and their magaz
 A3W_warchestSaving = 1;            // Save warchest objects deployed by players between server restarts (0 = no, 1 = yes)
 A3W_warchestMoneySaving = 1;       // Save warchest team money between server restarts (0 = no, 1 = yes)
 A3W_spawnBeaconSaving = 1;         // Save spawn beacons between server restarts (0 = no, 1 = yes)
-A3W_objectLifetime = 7*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
+A3W_objectLifetime = 3*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
 A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
 A3W_vehicleMaxUnusedTime = 3*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
 A3W_serverSavingInterval = 1*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
@@ -88,7 +88,7 @@ A3W_extDB_ConfigName = "A3W";      // Name of the connection config from extdb-c
 A3W_extDB_IniName = "a3wasteland"; // Name of the INI file in extDB\sql_custom_v2 to be used
 A3W_extDB_Misc = 0;                // Enable extDB Misc Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
 A3W_extDB_Steam = 0;               // Enable extDB Steam Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
-A3W_extDB_Rcon = 1;                // Enable extDB Rcon Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
+A3W_extDB_Rcon = 0;                // Enable extDB Rcon Protocol (0 = no, 1 = yes) - no associated features implemented in vanilla A3W
 A3W_extDB_RconName = "RCON";       // Name of the Rcon config from extdb-conf.ini to be used (the one within [brackets])
 A3W_extDB_RconCommands = "KICK-ADDBAN";	// List of dash-separated RCON commands allowed via extDB_Rcon
 

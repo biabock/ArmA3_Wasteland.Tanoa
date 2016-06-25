@@ -362,7 +362,10 @@ accessoriesArray = compileFinal str
 	["ACO (Red)", "optic_Aco", 75, "item"],
 	["ACO (Green)", "optic_Aco_grn", 75, "item"],
 	["Holosight SMG", "optic_Holosight_smg", 50, "item"],
+	["Holosight SMG (Black)", "optic_Holosight_smg_blk_F", 50, "item"],
 	["Holosight", "optic_Holosight", 75, "item"],
+	["Holosight (Black)", "optic_Holosight_blk_F", 75, "item"],
+	["Holosight (Khaki)", "optic_Holosight_khk_F", 75, "item"],
 	["MRCO", "optic_MRCO", 100, "item"],
 
 	["ERCO", "optic_ERCO_blk_F", 100, "item"],
@@ -412,7 +415,7 @@ headArray = compileFinal str
 	["Combat Helmet (Camonet)", "H_HelmetB_camo", 50, "hat"],
 
 	["Stealth Combat Helmet", "H_HelmetB_TI_tna_F", 75, "hat"],
-	//["Special Combat Helmet", "H_HelmetO_ViperSP_hex_F", 50000, "hat"],
+	["Special Combat Helmet", "H_HelmetO_ViperSP_hex_F", 50000, "hat"],
 
 	["Enhanced Combat Helmet", "H_HelmetSpecB", 75, "hat"],
 	["Enhanced Combat Helmet (Black)", "H_HelmetSpecB_blk", 75, "hat"],
@@ -544,9 +547,9 @@ uniformArray = compileFinal str
 
 	["Full Ghillie (Jungle)", "U_B_T_FullGhillie_tna_F", 400, "uni"],
 	["Full Ghillie (Jungle)", "U_O_T_FullGhillie_tna_F", 400, "uni"],
-	["CTRG Stealth Uniform", "U_B_CTRG_Soldier_F", 1000, "uni"],
-	["Special Purpose Suit (Hex)", "U_O_V_Soldier_Viper_hex_F", 1000, "uni"],
-	["Special Purpose Suit (G Hex)", "U_O_V_Soldier_Viper_F", 1000, "uni"],
+	["CTRG Stealth Uniform", "U_B_CTRG_Soldier_F", 2000, "uni"],
+	["Special Purpose Suit (Hex)", "U_O_V_Soldier_Viper_hex_F", 2000, "uni"],
+	["Special Purpose Suit (G Hex)", "U_O_V_Soldier_Viper_F", 2000, "uni"],
 
 	["Survival Fatigues (NATO)", "U_B_survival_uniform", 200, "uni"],
 	["Default Uniform (NATO)", "U_B_CombatUniform_mcam", 25, "uni"],
@@ -563,6 +566,12 @@ uniformArray = compileFinal str
 
 	["Fatigues (Green Hex)", "U_O_T_Soldier_F", 25, "uni"],
 	["Gendarmerie", "U_B_GEN_Soldier_F", 50, "uni"],
+
+	["Paramilitary 1", "U_I_C_Soldier_Para_1_F", 50, "uni"],
+	["Paramilitary 2", "U_I_C_Soldier_Para_2_F", 50, "uni"],
+	["Paramilitary 3", "U_I_C_Soldier_Para_3_F", 50, "uni"],
+	["Paramilitary 4", "U_I_C_Soldier_Para_4_F", 50, "uni"],
+	["Paramilitary 4", "U_I_C_Soldier_Para_5_F", 50, "uni"],
 
 	["Fatigues (Hex)", "U_O_CombatUniform_ocamo", 50, "uni"],
 	["Fatigues (Urban)", "U_O_CombatUniform_oucamo", 50, "uni"],
@@ -649,6 +658,11 @@ vestArray = compileFinal str
 	["LBV Harness (Gray)", "V_HarnessO_gry", -1, "vest"],
 	["LBV Grenadier Harness", "V_HarnessOGL_brn", -1, "vest"],
 	["LBV Grenadier Harness (Gray)", "V_HarnessOGL_gry", -1, "vest"],
+
+	["Tactical Chestrig (Olive)", "V_TacChestrig_oli_F", -1, "vest"],
+	["Tactical Chestrig (Green)", "V_TacChestrig_grn_F", -1, "vest"],
+	["Tactical Chestrig (Coyote)", "V_TacChestrig_cbr_F", -1, "vest"],
+
 	["Slash Bandolier (Black)", "V_BandollierB_blk", -1, "vest"],
 	["Slash Bandolier (Coyote)", "V_BandollierB_cbr", -1, "vest"],
 	["Slash Bandolier (Green)", "V_BandollierB_rgr", -1, "vest"],
@@ -934,12 +948,12 @@ tanksArray = compileFinal str
 	["IFV-6c Panther", "B_APC_Tracked_01_rcws_F", 35000, "vehicle"],
 	["FV-720 Mora", "I_APC_tracked_03_cannon_F", 37500, "vehicle"],
 	["BTR-K Kamysh", "O_APC_Tracked_02_cannon_F", 40000, "vehicle"],
-	["IFV-6a Cheetah AA", "B_APC_Tracked_01_AA_F", 40000, "vehicle"],
-	["ZSU-39 Tigris AA", "O_APC_Tracked_02_AA_F", 40000, "vehicle"],
-	["M2A1 Slammer", "B_MBT_01_cannon_F", 50000, "vehicle"],
-	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 50000, "vehicle"], // Commander gun variant
-	["T-100 Varsuk", "O_MBT_02_cannon_F", 50000, "vehicle"],
-	["MBT-52 Kuma", "I_MBT_03_cannon_F", 50000, "vehicle"]
+	["IFV-6a Cheetah AA", "B_APC_Tracked_01_AA_F", 45000, "vehicle"],
+	["ZSU-39 Tigris AA", "O_APC_Tracked_02_AA_F", 45000, "vehicle"],
+	["M2A1 Slammer", "B_MBT_01_cannon_F", 60000, "vehicle"],
+	["M2A4 Slammer HMG", "B_MBT_01_TUSK_F", 60000, "vehicle"], // Commander gun variant
+	["T-100 Varsuk", "O_MBT_02_cannon_F", 60000, "vehicle"],
+	["MBT-52 Kuma", "I_MBT_03_cannon_F", 60000, "vehicle"]
 ];
 
 
@@ -966,26 +980,26 @@ helicoptersArray = compileFinal str
 	["CH-67 Huron (Armed)", "B_Heli_Transport_03_F", 30000, "vehicle"], // CH-47 with 2 side miniguns
 	["AH-9 Pawnee", "B_Heli_Light_01_armed_F", 30000, "vehicle"], // Armed AH-6
 	["PO-30 Orca (Armed, Black)", "O_Heli_Light_02_v2_F", 30000, "vehicle"], // Armed Ka-60 with orca paintjob
-	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 35000, "vehicle"], // Armed Ka-60
+	["PO-30 Orca (Armed, Hex)", "O_Heli_Light_02_F", 60000, "vehicle"], // Armed Ka-60
 	["WY-55 Hellcat (Armed)", "I_Heli_light_03_F", 40000, "vehicle"], // Armed AW159
-	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 150000, "vehicle"], // RAH-66 with gunner
-	["Mi-48 Kajman", "O_Heli_Attack_02_F", 140000, "vehicle"], // Mi-28 with gunner
+	["AH-99 Blackfoot", "B_Heli_Attack_01_F", 200000, "vehicle"], // RAH-66 with gunner
+	["Mi-48 Kajman", "O_Heli_Attack_02_F", 180000, "vehicle"], // Mi-28 with gunner
 
-	["MQ-12 Falcon UAV", "B_T_UAV_03_F", 50000, "vehicle"]
+	["MQ-12 Falcon UAV", "B_T_UAV_03_F", 90000, "vehicle"]
 ];
 
 planesArray = compileFinal str
 [
 	["Caesar BTT", "C_Plane_Civil_01_F", 3000, "vehicle"],
 
-	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 130000, "vehicle"],
-	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 135000, "vehicle"],
-	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 160000, "vehicle"],
-	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 150000, "vehicle"],
+	["A-143 Buzzard AA", "I_Plane_Fighter_03_AA_F", 150000, "vehicle"],
+	["A-143 Buzzard CAS", "I_Plane_Fighter_03_CAS_F", 150000, "vehicle"],
+	["A-164 Wipeout CAS", "B_Plane_CAS_01_F", 200000, "vehicle"],
+	["To-199 Neophron CAS", "O_Plane_CAS_02_F", 190000, "vehicle"],
 
 	["V-44 X Blackfish (Infantry)", "B_T_VTOL_01_infantry_F", 20000, "vehicle"],
 	["V-44 X Blackfish (Gunship)", "B_T_VTOL_01_armed_F", 60000, "vehicle"],
-	["Y-32 Xi'an", "O_T_VTOL_02_infantry_F", 100000, "vehicle"],
+	["Y-32 Xi'an", "O_T_VTOL_02_infantry_F", 140000, "vehicle"],
 	
 	["MQ4A Greyhawk Missile UAV", "B_UAV_02_F", 80000, "vehicle"],
 	["MQ4A Greyhawk Bomber UAV", "B_UAV_02_CAS_F", 70000, "vehicle"], // Bomber UAVs are a lot harder to use, hence why they are cheaper than Missile ones
@@ -994,7 +1008,7 @@ planesArray = compileFinal str
 	["K40 Ababil-3 Missile UAV (AAF)", "I_UAV_02_F", 80000, "vehicle"],
 	["K40 Ababil-3 Bomber UAV (AAF)", "I_UAV_02_CAS_F", 70000, "vehicle"],
 
-	["KH-3A Fenghuang UAV", "O_T_UAV_04_CAS_F", 80000, "vehicle"]
+	["KH-3A Fenghuang UAV", "O_T_UAV_04_CAS_F", 75000, "vehicle"]
 ];
 
 boatsArray = compileFinal str

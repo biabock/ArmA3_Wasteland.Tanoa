@@ -15,7 +15,7 @@ _counter = 0;
 {
 	if (["boatSpawn_", _x] call fn_startsWith) then
 	{
-		if (random 1 < 0.75) then // 75% chance spawning
+		if (random 1 < 0.50) then // 75% chance spawning
 		{
 			[markerPos _x] call boatCreation;
 			_counter = _counter + 1;
