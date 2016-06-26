@@ -10,6 +10,17 @@ disableSerialization;
 
 private ["_dialog", "_balance", "_amountInput", "_accDropdown", "_feeText", "_totalText", "_bmoney", "_balanceText", "_amount", "_fee", "_feeAmount", "_selAcc"];
 
+
+_supporterLevel = player getVariable ["SupporterLevel", 0];
+
+if (_supporterLevel > 0) then
+{
+	_maxBalance = 4000000;
+}
+else {
+	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+};
+
 _dialog = findDisplay AtmGUI_IDD;
 
 if (isNull _dialog) exitWith {};
@@ -22,7 +33,7 @@ _totalText = _dialog displayCtrl AtmTotalText_IDC;
 
 _bmoney = player getVariable ["bmoney", 0];
 _balanceText = format ["$%1", [player getVariable ["bmoney", 0]] call fn_numbersText];
-if (_bmoney >= ["A3W_atmMaxBalance", 1000000] call getPublicVar) then { _balanceText = format ["<t color='#FFA080'>%1</t>", _balanceText] };
+if (_bmoney >= _maxBalance) then { _balanceText = format ["<t color='#FFA080'>%1</t>", _balanceText] };
 
 _balance ctrlSetStructuredText parseText _balanceText;
 

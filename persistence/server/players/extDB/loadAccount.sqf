@@ -6,7 +6,7 @@
 
 if (!isServer) exitWith {};
 
-private ["_UID", "_bank", "_moneySaving", "_crossMap", "_environment", "_result", "_data", "_location", "_dataTemp", "_ghostingTimer", "_secs", "_columns", "_pvar", "_pvarG"];
+private ["_UID", "_bank", "_moneySaving", "_crossMap", "_environment", "_result", "_supporterLevel", "_data", "_location", "_dataTemp", "_ghostingTimer", "_secs", "_columns", "_pvar", "_pvarG"];
 _UID = _this;
 
 _bank = 0;
@@ -24,6 +24,8 @@ if (_moneySaving) then
 	};
 };
 
+_supporterLevel = (["getPlayerSupporterLevel:" + _UID, 2] call extDB_Database_async) param [0,0,[0]];
+
 _result = if (_crossMap) then
 {
 	([format ["checkPlayerSaveXMap:%1:%2", _UID, _environment], 2] call extDB_Database_async) select 0
@@ -38,7 +40,8 @@ if (!_result) then
 	_data =
 	[
 		["PlayerSaveValid", false],
-		["BankMoney", _bank]
+		["BankMoney", _bank],
+		["SupporterLevel", _supporterLevel]
 	];
 }
 else
@@ -131,6 +134,7 @@ else
 
 	_dataTemp = _data;
 	_data = [["PlayerSaveValid", true]];
+	_data = [["PlayerSaveValid", true], ["SupporterLevel", _supporterLevel]];
 
 	_ghostingTimer = ["A3W_extDB_GhostingTimer", 5*60] call getPublicVar;
 

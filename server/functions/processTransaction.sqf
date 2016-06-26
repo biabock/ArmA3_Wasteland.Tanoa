@@ -6,6 +6,16 @@
 
 _type = param [0, "", [""]];
 
+_supporterLevel = player getVariable ["SupporterLevel", 0];
+
+if (_supporterLevel > 0) then
+{
+	_maxBalance = 4000000;
+}
+else {
+	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+};
+
 switch (toLower _type) do
 {
 	case "warchest":
@@ -112,8 +122,8 @@ switch (toLower _type) do
 			if (_amount < 0 && _balance < abs _amount) exitWith {}; // player has not enough funds for withdrawal
 
 			_newBalance = _balance + _amount;
-
-			if (_newBalance > ["A3W_atmMaxBalance", 1000000] call getPublicVar) exitWith {}; // account would exceed or has reached max balance
+			
+			if (_newBalance > _maxBalance) exitWith {}; // account would exceed or has reached max balance
 
 			_player setVariable ["bmoney", _newBalance, true];
 
@@ -155,7 +165,7 @@ switch (toLower _type) do
 
 			_rBalance = _recipient getVariable ["bmoney", 0];
 
-			if (_rBalance + _amount > ["A3W_atmMaxBalance", 1000000] call getPublicVar) exitWith {}; // recipient would exceed or has reached max balance
+			if (_rBalance + _amount > _maxBalance) exitWith {}; // recipient would exceed or has reached max balance
 
 			_sBalance = _sBalance - (if (!local _sender) then { _total } else { 0 });
 			_rBalance = _rBalance + _amount;

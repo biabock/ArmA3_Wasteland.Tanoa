@@ -540,5 +540,7 @@ if (["A3W_serverMissions"] call isConfigOn) then
 	[] execVM "server\missions\masterController.sqf";
 };
 
+// new cleanup test
+[] execVM "addons\module_cleanup\init.sqf";
 // Start clean-up loop
 [] execVM "server\WastelandServClean.sqf";

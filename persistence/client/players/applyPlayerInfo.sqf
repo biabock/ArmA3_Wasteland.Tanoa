@@ -18,5 +18,6 @@ _data = _this;
 	{
 		//case "Donator": { player setVariable ["Donator", _value > 0] }; // deprecated
 		//case "BankMoney": { player setVariable ["bmoney", _value max 0, true] }; // NOTE: Bank money assignation has been moved server-side
+		case "SupporterLevel": { player setVariable ["SupporterLevel", _value] };
 	};
 } forEach _data;

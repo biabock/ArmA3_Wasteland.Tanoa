@@ -415,7 +415,7 @@ headArray = compileFinal str
 	["Combat Helmet (Camonet)", "H_HelmetB_camo", 50, "hat"],
 
 	["Stealth Combat Helmet", "H_HelmetB_TI_tna_F", 75, "hat"],
-	["Special Combat Helmet", "H_HelmetO_ViperSP_hex_F", 50000, "hat"],
+	//["Special Combat Helmet", "H_HelmetO_ViperSP_hex_F", 50000, "hat"],
 
 	["Enhanced Combat Helmet", "H_HelmetSpecB", 75, "hat"],
 	["Enhanced Combat Helmet (Black)", "H_HelmetSpecB_blk", 75, "hat"],
@@ -560,9 +560,9 @@ uniformArray = compileFinal str
 	["Combat Fatigues (Tee)", "U_B_CombatUniform_mcam_tshirt", 25, "uni"],
 	["Combat Fatigues (Gangsta)", "U_I_G_resistanceLeader_F", 25, "uni"],
 	["Combat Fatigues (Rolled-up)", "U_I_CombatUniform_shortsleeve", 25, "uni"],
-	["CTRG Combat Uniform", "U_B_CTRG_1", 25, "uni"],
-	["CTRG Combat Uniform (Tee)", "U_B_CTRG_2", 25, "uni"],
-	["CTRG Combat Uniform (Rolled-up)", "U_B_CTRG_3", 25, "uni"],
+	["CTRG Combat Uniform", "U_B_CTRG_1", 2000, "uni"],
+	["CTRG Combat Uniform (Tee)", "U_B_CTRG_2", 2000, "uni"],
+	["CTRG Combat Uniform (Rolled-up)", "U_B_CTRG_3", 2000, "uni"],
 
 	["Fatigues (Green Hex)", "U_O_T_Soldier_F", 25, "uni"],
 	["Gendarmerie", "U_B_GEN_Soldier_F", 50, "uni"],
