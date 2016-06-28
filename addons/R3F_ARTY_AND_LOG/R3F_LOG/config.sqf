@@ -87,7 +87,7 @@ R3F_LOG_CFG_objets_remorquables append R3F_LOG_CFG_objets_remorquablesH;
  */
 R3F_LOG_CFG_heliporteurs =
 [
-	"Helicopter_Base_F"
+	"Helicopter_Base_F",
 	"Heli_Light_01_base_F",
 	"Heli_Light_02_base_F",
 	"Heli_light_03_base_F",
