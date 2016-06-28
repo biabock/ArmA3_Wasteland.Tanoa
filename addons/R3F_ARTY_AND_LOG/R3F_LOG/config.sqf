@@ -42,6 +42,16 @@ R3F_LOG_CFG_objets_remorquables =
 	"Plane"
 ];
 
+/****** LIFT WITH VEHICLE  ******/
+
+/**
+ * List of class names of air vehicles which can lift liftables objects.
+ */
+R3F_LOG_CFG_heliporteurs =
+[
+	"Helicopter_Base_F"
+];
+
 /**
  * List of class names of liftables objects.
  */
