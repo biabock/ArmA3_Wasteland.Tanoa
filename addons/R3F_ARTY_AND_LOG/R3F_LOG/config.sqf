@@ -14,7 +14,12 @@ R3F_LOG_CFG_remorqueurs =
 	"MRAP_01_base_F",
 	"MRAP_02_base_F",
 	"MRAP_03_base_F",
-	"Boat_Armed_01_base_F"
+	"Boat_Armed_01_base_F",
+	"Truck_01_base_F",
+	"Truck_02_base_F",
+	"Truck_03_base_F",
+	"Wheeled_APC_F",
+	"Tank_F"
 ];
 
 /**
@@ -22,11 +27,11 @@ R3F_LOG_CFG_remorqueurs =
  */
 R3F_LOG_CFG_remorqueursH =
 [
-	"Truck_01_base_F",
-	"Truck_02_base_F",
-	"Truck_03_base_F",
-	"Wheeled_APC_F",
-	"Tank_F"
+	//"Truck_01_base_F",
+	//"Truck_02_base_F",
+	//"Truck_03_base_F",
+	//"Wheeled_APC_F",
+	//"Tank_F"
 ];
 
 R3F_LOG_CFG_remorqueurs append R3F_LOG_CFG_remorqueursH;
@@ -43,14 +48,7 @@ R3F_LOG_CFG_objets_remorquables =
 	"Heli_Light_01_base_F",
 	"Heli_Light_02_base_F",
 	"Heli_light_03_base_F",
-	"Heli_Attack_01_base_F"
-];
-
-/**
- * List of class names of HEAVY towables objects. Takes precedence over R3F_LOG_CFG_objets_remorquables
- */
-R3F_LOG_CFG_objets_remorquablesH =
-[
+	"Heli_Attack_01_base_F",
 	"Wheeled_APC_F",
 	"Tank_F",
 	"Heli_Attack_02_base_F",
@@ -63,6 +61,23 @@ R3F_LOG_CFG_objets_remorquablesH =
 	"Plane_CAS_02_base_F"
 ];
 
+/**
+ * List of class names of HEAVY towables objects. Takes precedence over R3F_LOG_CFG_objets_remorquables
+ */
+R3F_LOG_CFG_objets_remorquablesH =
+[
+	// "Wheeled_APC_F",
+	// "Tank_F",
+	// "Heli_Attack_02_base_F",
+	// "Heli_Transport_01_base_F",
+	// "Heli_Transport_02_base_F",
+	// "Heli_Transport_03_base_F",
+	// "Heli_Transport_04_base_F",
+	// "VTOL_base_F",
+	// "Plane_CAS_01_base_F",
+	// "Plane_CAS_02_base_F"
+];
+
 R3F_LOG_CFG_objets_remorquables append R3F_LOG_CFG_objets_remorquablesH;
 
 /****** LIFT WITH VEHICLE  ******/
@@ -72,14 +87,17 @@ R3F_LOG_CFG_objets_remorquables append R3F_LOG_CFG_objets_remorquablesH;
  */
 R3F_LOG_CFG_heliporteurs =
 [
-	//"Helicopter_Base_F"
-	//"Heli_Light_01_base_F",
+	"Helicopter_Base_F"
+	"Heli_Light_01_base_F",
 	"Heli_Light_02_base_F",
 	"Heli_light_03_base_F",
 	"Heli_Attack_01_base_F",
 	"Heli_Attack_02_base_F",
 	"Heli_Transport_01_base_F",
-	"VTOL_base_F"
+	"VTOL_base_F",
+	"Heli_Transport_02_base_F",
+	"Heli_Transport_03_base_F",
+	"Heli_Transport_04_base_F"
 ];
 
 /**
@@ -87,9 +105,9 @@ R3F_LOG_CFG_heliporteurs =
  */
 R3F_LOG_CFG_heliporteursH =
 [
-	"Heli_Transport_02_base_F",
-	"Heli_Transport_03_base_F",
-	"Heli_Transport_04_base_F"
+	// "Heli_Transport_02_base_F",
+	// "Heli_Transport_03_base_F",
+	// "Heli_Transport_04_base_F"
 ];
 
 R3F_LOG_CFG_heliporteurs append R3F_LOG_CFG_heliporteursH;
@@ -103,14 +121,7 @@ R3F_LOG_CFG_objets_heliportables =
 	"Ship_F",
 	"Plane",
 	"UAV_03_base_F",
-	"Heli_Light_01_base_F"
-];
-
-/**
- * List of class names of HEAVY liftables objects. Takes precedence over R3F_LOG_CFG_objets_heliportables
- */
-R3F_LOG_CFG_objets_heliportablesH =
-[
+	"Heli_Light_01_base_F",
 	"Wheeled_APC_F",
 	"Tank_F",
 	"Heli_Light_02_base_F",
@@ -126,6 +137,28 @@ R3F_LOG_CFG_objets_heliportablesH =
 	"Plane_Fighter_03_base_F",
 	"VTOL_01_base_F",
 	"VTOL_02_base_F"
+];
+
+/**
+ * List of class names of HEAVY liftables objects. Takes precedence over R3F_LOG_CFG_objets_heliportables
+ */
+R3F_LOG_CFG_objets_heliportablesH =
+[
+	// "Wheeled_APC_F",
+	// "Tank_F",
+	// "Heli_Light_02_base_F",
+	// "Heli_light_03_base_F",
+	// "Heli_Attack_01_base_F",
+	// "Heli_Attack_02_base_F",
+	// "Heli_Transport_01_base_F",
+	// "Heli_Transport_02_base_F",
+	// "Heli_Transport_03_base_F",
+	// "Heli_Transport_04_base_F",
+	// "Plane_CAS_01_base_F",
+	// "Plane_CAS_02_base_F",
+	// "Plane_Fighter_03_base_F",
+	// "VTOL_01_base_F",
+	// "VTOL_02_base_F"
 ];
 
 R3F_LOG_CFG_objets_heliportables append R3F_LOG_CFG_objets_heliportablesH;
