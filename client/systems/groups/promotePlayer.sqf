@@ -32,31 +32,9 @@ if (isNil "_target") exitWith { player globalChat "You must select someone to pr
 
 if (_target == player) exitWith { player globalChat "You can't promote yourself." };
 
-_inCombat = false;
+(group player) selectLeader _target;
+["You have been promoted to group leader.", "A3W_fnc_titleTextMessage", _target] call A3W_fnc_MP;
 
-if (alive _target) then
-{
-	//_isIndie = !((side group _target) in [BLUFOR,OPFOR]);
-
-	//check to see how close to the enemy the target leader is
-	{
-		if (_x distance _target < 100 && {[_x, _target] call A3W_fnc_isFriendly}) exitWith
-		{
-			_inCombat = true;
-		};
-	} forEach allUnits;
-};
-
-if (!_inCombat) then
-{
-	(group player) selectLeader _target;
-	["You have been promoted to group leader.", "A3W_fnc_titleTextMessage", _target] call A3W_fnc_MP;
-
-	player globalChat format ["You have promoted %1 to group leader", name _target];
-	player setVariable ["currentGroupIsLeader", false, true];
-	_target setVariable ["currentGroupIsLeader", true, true];
-}
-else
-{
-	player globalChat "This player is in combat. You can't make it leader right now";
-};
+player globalChat format ["You have promoted %1 to group leader", name _target];
+player setVariable ["currentGroupIsLeader", false, true];
+_target setVariable ["currentGroupIsLeader", true, true];
