@@ -1110,7 +1110,6 @@ colorsArray = compileFinal str
 			["Stripes 3", _texDir + "stripes3.paa"],
 			["Swamp", _texDir + "swamp.paa"],
 			["Tiger", _texDir + "tiger.paa"],
-			["Trippy", _texDir + "rainbow.paa"],
 			["Union Jack", _texDir + "unionjack.paa"],
 			["Urban", _texDir + "urban.paa"],
 			["Weed", _texDir + "weed.paa"],
