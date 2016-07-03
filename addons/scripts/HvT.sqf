@@ -8,7 +8,7 @@
 
 if (isServer) then
 {
-	["HvT_deleteMarker", "onPlayerDisconnected", { deleteMarker ("HvT_" + _uid) }] call BIS_fnc_addStackedEventHandler;
+	addMissionEventHandler ["PlayerDisconnected", { deleteMarker ("HvT_" + (_this select 1)) }];
 };
 
 if (!hasInterface) exitWith {};
