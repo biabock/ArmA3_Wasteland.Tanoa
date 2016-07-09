@@ -71,7 +71,7 @@ drawPlayerIcons_thread = [] spawn
 		};
 	} forEach _mineColor;
 
-	_noBuiltInThermal = ["A3W_disableBuiltInThermal"] call isConfigOn;
+	//_noBuiltInThermal = ["A3W_disableBuiltInThermal"] call isConfigOn; //NOT WORKING RIGHT
 
 	private ["_dist"];
 
@@ -186,7 +186,7 @@ drawPlayerIcons_thread = [] spawn
 				} forEach detectedMines playerSide;
 			};
 
-			if (_noBuiltInThermal || (currentWeapon player) select [0,15] == "Laserdesignator") then
+			/*if (_noBuiltInThermal || (currentWeapon player) select [0,15] == "Laserdesignator") then
 			{
 				_thermalActive = currentVisionMode player isEqualTo 2;
 
@@ -223,7 +223,7 @@ drawPlayerIcons_thread = [] spawn
 						};
 					};
 				};
-			};
+			};*/
 		};
 
 		drawPlayerIcons_array = _newArray;
