@@ -163,14 +163,14 @@ MainMissions =
 	//["mission_ArmedDiversquad", 1],
 	["mission_Coastal_Convoy", 0.5],
 	//["mission_Convoy", 1],
-	["mission_Hackers", 0.5],
+	["mission_Hackers", 0.1],
 	["mission_HostileHeliFormation", 0.5],
 	["mission_HostileJetFormation", 0.5],
 	["mission_APC", 1],
 	["mission_MBT", 1],
 	["mission_LightArmVeh", 1],
-	["mission_ArmedHeli", 1]
-	//["mission_AbandonedJet", 0.5],
+	["mission_ArmedHeli", 1],
+	["mission_AbandonedJet", 0.3]
 	//["mission_CivHeli", 1]
 ];
 
@@ -178,24 +178,18 @@ SideMissions =
 [
 	["mission_HostileHelicopter", 0.5],
 	//["mission_MiniConvoy", 1],
-	["mission_SunkenSupplies", 1],
+	["mission_SunkenSupplies", 0.5],
 	["mission_TownInvasion", 1],
-	//["mission_AirWreck", 1],
-	//["mission_WepCache", 1],
+	["mission_AirWreck", 1],
+	["mission_WepCache", 1],
 	["mission_Outpost", 1],
-	["mission_Truck", 1],
-	//["mission_Roadblock", 1],
-	["mission_HostileJet", 0.5],
-	//["mission_Sniper", 1],
-	["mission_Smugglers", 1],
-	["mission_drugsRunners", 1],
-	["mission_GeoCache", 1]
+	["mission_Truck", 1]
 ];
 
 MoneyMissions =
 [
 	["mission_MoneyShipment", 1],
 	["mission_SunkenTreasure", 0.5],
-	["mission_militaryPatrol", 1],
-	["mission_altisPatrol", 1]
+	["mission_MoneyShipment2", 1],
+	["mission_MoneyShipment3", 1]
 ];
