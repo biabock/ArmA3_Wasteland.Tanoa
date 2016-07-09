@@ -31,6 +31,8 @@ overviewPicture = "mapConfig\Loading.paa";
 loadScreen = "mapConfig\Loading.paa";
 briefing = 0; // if 0, skip Continue button
 
+sasasa
+
 #include "debugFlag.hpp"
 
 // A3W UI color (default = sky blue)
