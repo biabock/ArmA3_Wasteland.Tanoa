@@ -5,7 +5,7 @@ cfg_va_info_action_on = true;
 cfg_va_unflip_action_on = true;  
 
 //How much time (in seconds) to make the player wait before the vehicle is unflipped
-cfg_va_unflip_wait_time = 10;
+cfg_va_unflip_wait_time = 5;
 
 //Minimum distance (in meters) the player must stay from the vehicle for the unflup action to complete
 cfg_va_unflip_wait_distance = 10;
@@ -14,7 +14,7 @@ cfg_va_unflip_wait_distance = 10;
 cfg_va_pull_player_action_on = true;
 
 //display lock/unlock actions 
-cfg_va_lock_action_on = true;
+cfg_va_lock_action_on = ["A3W_vehicleLocking"] call isConfigOn;
 
 //Only the player with UID that matches "ownerUID" variable can lock/unlock the vehicle
 cfg_va_lock_owner_only = true;
@@ -26,6 +26,5 @@ cfg_va_lock_sound_play = true;
 cfg_va_lock_from_inside = true;
 
 //List of classes for vehicles that can locked/unlocked (empty means all)
-cfg_va_lock_actions_classes_list = [];
-
-
+cfg_va_lock_actions_classes_list = ["LandVehicle", "Air", "Ship"];
+cfg_va_lock_actions_classes_list_excl = ["StaticWeapon", "UAV_01_base_F"];

@@ -28,6 +28,10 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 
+CHVD_allowTerrain = false;
+CHVD_maxView = 4000; // Set maximum view distance (default: 12000)
+CHVD_maxObj = 4000; // Set maximimum object view distance (default: 12000)
+
 // versionName = ""; // Set in STR_WL_WelcomeToWasteland in stringtable.xml
 
 if (isServer) then { X_Server = true };
@@ -86,16 +90,17 @@ if (isServer) then
 if (hasInterface || isServer) then
 {
 	//init 3rd Party Scripts
+	[] execVM "addons\parking\functions.sqf";
+	[] execVM "addons\storage\functions.sqf";
+	[] execVM "addons\vactions\functions.sqf";
 	[] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 	[] execVM "addons\proving_ground\init.sqf";
 	[] execVM "addons\JumpMF\init.sqf";
 	[] execVM "addons\outlw_magrepack\MagRepack_init.sqf";
 	[] execVM "addons\lsd_nvg\init.sqf";
-	[] execVM "addons\vactions\functions.sqf"; //Vehicle Actions
 	[] execVM "addons\scripts\HvT.sqf";                       // High Value Target
 	//[] execVM "addons\scripts\HvD.sqf";                       // High Value Drugrunner
 	[] execVM "addons\Grenades\ToxicGas.sqf"; // Toxic Gas Grenades
-	[] execVM "addons\EtV\init.sqf"; // Explosives to Vehicles
 	[] execVM "addons\laptop\init.sqf"; //Hacker Mission
 	[] execVM "addons\APOC_Airdrop_Assistance\init.sqf"; //Airdrop Assistance
 	[] execVM "addons\stickyCharges\init.sqf";
