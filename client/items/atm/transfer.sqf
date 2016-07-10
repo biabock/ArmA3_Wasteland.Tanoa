@@ -50,7 +50,7 @@ if (_balance < _total) exitWith
 	playSound "FD_CP_Not_Clear_F";
 };
 
-_supporterLevel = player getVariable ["SupporterLevel", 0];
+_supporterLevel = _selAcc getVariable ["SupporterLevel", 0];
 
 if (_supporterLevel > 0) then
 {
