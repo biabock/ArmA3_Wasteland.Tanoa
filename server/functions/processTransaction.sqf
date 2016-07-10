@@ -123,7 +123,7 @@ switch (toLower _type) do
 
 			_newBalance = _balance + _amount;
 			
-			//if (_newBalance > _maxBalance) exitWith {}; // account would exceed or has reached max balance - REMOVED DUE VIP TIME END AND BALANCE IS >DEFAULT THE PLAYER WILL BE UNABLE TO WITHDRAW
+			if (_newBalance > _maxBalance) exitWith {}; // account would exceed or has reached max balance
 
 			_player setVariable ["bmoney", _newBalance, true];
 
