@@ -17,6 +17,8 @@ private _mapID = call A3W_extDB_MapID;
 private _query = [["checkPlayerSave", _UID, _mapID], ["checkPlayerSaveXMap", _UID, _environment]] select _crossMap;
 _result = ([_query, 2] call extDB_Database_async) param [0,false];
 
+_supporterLevel = (["getPlayerSupporterLevel:" + _UID, 2] call extDB_Database_async) param [0,0,[0]];
+
 if (!_result) then
 {
 	_data = [["PlayerSaveValid", false]/*, ["BankMoney", _bank]*/];
@@ -134,8 +136,6 @@ else
 private _bank = 0;
 private _bounty = 0;
 private _bountyKills = [];
-
-_supporterLevel = (["getPlayerSupporterLevel:" + _UID, 2] call extDB_Database_async) param [0,0,[0]];
 
 if (_moneySaving) then
 {
