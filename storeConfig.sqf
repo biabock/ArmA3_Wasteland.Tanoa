@@ -756,6 +756,7 @@ genItemArray = compileFinal str
 	["Rangefinder", "Rangefinder", 150, "binoc"],
 	["Laser Designator (Sand)", "Laserdesignator", 2500, "binoc"], // Increase price to 2500 if A3W_disableBuiltInThermal = 0
 	["Laser Designator (Hex)", "Laserdesignator_02", 2500, "binoc"],
+	["Laser Designator (G Hex)", "Laserdesignator_02_ghex_F", 2500, "binoc"],
 	["Laser Designator (Olive)", "Laserdesignator_03", 2500, "binoc"],
 	["IR Grenade (NATO)", "B_IR_Grenade", 50, "mag", "WEST"],
 	["IR Grenade (CSAT)", "O_IR_Grenade", 50, "mag", "EAST"],
