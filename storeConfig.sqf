@@ -415,7 +415,8 @@ headArray = compileFinal str
 	["Combat Helmet (Camonet)", "H_HelmetB_camo", 50, "hat"],
 
 	["Stealth Combat Helmet", "H_HelmetB_TI_tna_F", 75, "hat"],
-	//["Special Combat Helmet", "H_HelmetO_ViperSP_hex_F", 50000, "hat"],
+	["Special Combat Helmet (Hex)", "H_HelmetO_ViperSP_hex_F", 50000, "hat"],
+	["Special Combat Helmet (G Hex)", "H_HelmetO_ViperSP_ghex_F", 50000, "hat"],
 
 	["Enhanced Combat Helmet", "H_HelmetSpecB", 75, "hat"],
 	["Enhanced Combat Helmet (Black)", "H_HelmetSpecB_blk", 75, "hat"],
@@ -434,9 +435,6 @@ headArray = compileFinal str
 	["Crew Helmet (NATO)", "H_HelmetCrew_B", 60, "hat"],
 	["Crew Helmet (CSAT)", "H_HelmetCrew_O", 60, "hat"],
 	["Crew Helmet (AAF)", "H_HelmetCrew_I", 60, "hat"],
-	["Heli Crew Helmet (NATO)", "H_CrewHelmetHeli_B", 50, "hat"],
-	["Heli Crew Helmet (CSAT)", "H_CrewHelmetHeli_O", 50, "hat"],
-	["Heli Crew Helmet (AAF)", "H_CrewHelmetHeli_I", 50, "hat"],
 	["Military Cap (Blue)", "H_MilCap_blue", 25, "hat"],
 	["Military Cap (Gray)", "H_MilCap_gry", 25, "hat"],
 	["Military Cap (Urban)", "H_MilCap_oucamo", 25, "hat"],
