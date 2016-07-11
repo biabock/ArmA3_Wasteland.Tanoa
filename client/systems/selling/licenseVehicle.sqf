@@ -64,10 +64,10 @@ _objName = getText (configFile >> "CfgVehicles" >> _objClass >> "displayName");
 		// Display confirm message
 		if ([parseText _confirmMsg, "Confirm", "LICENSE", true] call BIS_fnc_guiMessage) then
 		{	
-		  	_vehicle setVariable ["A3W_missionVehicle", true, true];	
-			_vehicle setVariable ["ownerN", name player, true];
-			_vehicle setVariable ["ownerUID", getPlayerUID player, true];		
-		  
+		  	_vehicle setVariable ["A3W_purchasedVehicle", true, true];
+			_vehicle setVariable ["ownerName", name player, true];
+			_vehicle setVariable ["ownerUID", getPlayerUID player, true];	
+	
 			player setVariable["cmoney",(player getVariable "cmoney")-_price,true];
 			[format ['Congratulations! You are now the proud owner of a %1', _objname, VEHICLE_MAX_SELLING_DISTANCE], "THANK YOU"] call  BIS_fnc_guiMessage;
 			
