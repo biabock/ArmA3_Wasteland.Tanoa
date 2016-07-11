@@ -188,14 +188,14 @@ class playerSettings {
 			onButtonClick = "setViewDistance 4000;";
 			x = 0.02; y = 0.60;
 			w = 0.125; h = 0.033 * safezoneH;
-		};*/
+		};
 		class btnDistanceEffects : w_RscButton {
 			idc = -1;
 			text = "Effects";
 			onButtonClick = "[] execVM 'addons\disableEnvironment\disableEnvironment.sqf'";
 			x = 0.158; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
-		};
+		};*/
 		
 		class btnDistanceCHVD : w_RscButton {
 			idc = -1;
