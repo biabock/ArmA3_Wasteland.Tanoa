@@ -54,7 +54,7 @@ _col_mixed = "ColorOrange";
 		_markerName setMarkerTypeLocal "mil_dot";
 		_markerName setMarkerColorLocal _col_empty;
 		_markerName setMarkerSizeLocal [1,1];
-		_markerName setMarkerTextLocal "GUN STORE";
+		_markerName setMarkerTextLocal "";
 		// _markerName setMarkerAlphaLocal 0.5;
 
 		_status pushBack "EMPTY";
@@ -74,22 +74,22 @@ _setStatus =
 		case "EMPTY": {
 			_markerNameZone setmarkerColorLocal _col_empty;
 			_markerNameDescription setmarkerColorLocal _col_empty;
-			_markerNameDescription setMarkerTextLocal "GUN STORE";
+			//_markerNameDescription setMarkerTextLocal "GUN STORE";
 		};
 		case "ENEMY": {
 			_markerNameZone setmarkerColorLocal _col_enemy;
 			_markerNameDescription setmarkerColorLocal _col_enemy;
-			_markerNameDescription setMarkerTextLocal "GUN STORE (Enemies)";
+			//_markerNameDescription setMarkerTextLocal "GUN STORE (Enemies)";
 		};
 		case "FRIENDLY": {
 			_markerNameZone setmarkerColorLocal _col_friendly;
 			_markerNameDescription setmarkerColorLocal _col_friendly;
-			_markerNameDescription setMarkerTextLocal "GUN STORE (Allies)";
+			//_markerNameDescription setMarkerTextLocal "GUN STORE (Allies)";
 		};
 		case "MIXED": {
 			_markerNameZone setmarkerColorLocal _col_mixed;
 			_markerNameDescription setmarkerColorLocal _col_mixed;
-			_markerNameDescription setMarkerTextLocal "GUN STORE (Enemies and Allies)";
+			//_markerNameDescription setMarkerTextLocal "GUN STORE (Enemies and Allies)";
 		};
 	};
 

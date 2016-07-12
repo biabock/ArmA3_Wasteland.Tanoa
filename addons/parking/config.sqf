@@ -3,7 +3,7 @@
 pp_markers_enabled = true; 
 
 //shape, type, color, size, text (for map markers, if enabled)
-pp_markers_properties = ["ICON", "mil_dot", "ColorCIV", [1,1], "Parking"];
+pp_markers_properties = ["ICON", "mil_box", "ColorCIV", [0.35,0.35], "Parking"];
 
 //amount of money to charge player for retrieving a vehicle from parking (0 = no charge)
 pp_retrieve_cost = ["A3W_privateParkingCost", 2500] call getPublicVar;

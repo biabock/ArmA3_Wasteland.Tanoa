@@ -6,21 +6,27 @@
 
 _markers =
 [
+	["Arma Brothers", "EmptyIcon", "ColorWhite", [1,1]],
+	["wwww.armabrothers.com", "EmptyIcon", "ColorWhite", [1,1]],
+	["", "EmptyIcon", "ColorWhite", [1,1]],
 	["Legend:", "EmptyIcon", "ColorWhite", [1,1]],
 
-	["GS - General Store", "mil_dot", "ColorBlue", [1,1]],
-	["VS - Vehicle Store", "mil_dot", "ColorOrange", [1,1]]
+	["Gun Store", "mil_dot", "ColorYellow", [1,1]],
+	["Gun Store (Enemies)", "mil_dot", "ColorRed", [1,1]],
+	["Gun Store (Allies)", "mil_dot", "ColorGreen", [1,1]],
+	["General Store", "mil_dot", "ColorBlue", [1,1]],
+	["Vehicle Store", "mil_dot", "ColorOrange", [1,1]]
 ];
 
 
 if (["A3W_privateParking"] call isConfigOn) then
 {
-	_markers pushBack ["Parking", "mil_dot", "ColorCIV", [1,1]];
+	_markers pushBack ["Personal Garage", "mil_box", "ColorCIV", [0.5,0.5]];
 };
 
 if (["A3W_privateStorage"] call isConfigOn) then
 {
-	_markers pushBack ["Storage", "mil_dot", "ColorUNKNOWN", [1,1]];
+	_markers pushBack ["Personal Storage", "mil_box", "ColorUNKNOWN", [0.5,0.5]];
 };
 
 _mapSize = getNumber (configFile >> "CfgWorlds" >> worldName >> "mapSize");
