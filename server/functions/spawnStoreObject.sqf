@@ -184,17 +184,11 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				// _object spawn cleanVehicleWreck;
 				_object setVariable ["A3W_purchasedVehicle", true, true];
 
-				if (["A3W_vehicleLocking"] call isConfigOn && !_isUAV) then
+				if (["A3W_vehicleLocking"] call isConfigOn && !(_skipSave) && !({_object isKindOf _x} count ["UAV_02_base_F", "UAV_03_base_F", "UGV_01_base_F", "O_T_UAV_04_CAS_F"] > 0)) then
 				{
 					[_object, 2] call A3W_fnc_setLockState; // Lock
+					_object engineOn true
 				};
-			};
-		
-			if (_object isKindOf "AllVehicles" && !({_object isKindOf _x} count ["StaticWeapon","UAV_02_base_F","UGV_01_base_F","B_T_UAV_03_F","O_T_UAV_04_CAS_F"] > 0)) then
-			{
-				_object engineOn true; // Lets already turn the engine one to see if it fixes exploding vehicles.
-				_object lock 2; // Spawn vehicles in locked
-				_object setVariable ["R3F_LOG_disabled", true, true]; // Spawn vehicles in locked
 			};
 
 			_object setDir (if (_object isKindOf "Plane") then { markerDir _marker } else { random 360 });
