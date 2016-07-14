@@ -82,6 +82,7 @@ _object = switch (_type) do {
 		_object setVariable ["A3W_purchasedStoreObject", true];
 		_object setVariable ["A3W_purchasedVehicle", true, true];
 		_object setVariable ["ownerUID", getPlayerUID _player, true];
+		_object setVariable ["ownerName", name _player, true];
 		[_object, false] call vehicleSetup;
 		if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then
 		{
