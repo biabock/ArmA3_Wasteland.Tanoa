@@ -358,6 +358,6 @@ while {true} do
 		};
 	};
 
-	enableEnvironment true;
+	//enableEnvironment true;
 	uiSleep 1;
 };
