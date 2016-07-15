@@ -8,7 +8,7 @@
 //	@file Args:
 
 if (!isServer) exitwith {};
-#include "moneyMissionDefines.sqf";
+#include "sideMissionDefines.sqf";
 
 private ["_cashObjects", "_cash", "_cashPos", "_box1", "_boxPos", "_vehicleClass", "_vehicle"];
 
