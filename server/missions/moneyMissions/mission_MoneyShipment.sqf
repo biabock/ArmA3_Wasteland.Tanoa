@@ -168,6 +168,7 @@ _setupObjects =
 		};
 
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
+		[_vehicle, "client\images\vehicleTextures\woodtiger.paa"] call applyVehicleTexture;
 
 		_vehicle
 	};
