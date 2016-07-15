@@ -24,8 +24,8 @@ _setupVars =
 	[
 		// Hard
 		[
-			"Large Tanoa Patrol", // Marker text
-			75000, // Money
+			"Large Drugs Convoy", // Marker text
+			50000, // Money
 			[
 				[
 					["I_MBT_03_cannon_F"], // Veh 1
@@ -36,8 +36,8 @@ _setupVars =
 		],
 		// Extreme
 		[
-			"Heavy Tanoa Patrol", // Marker text
-			100000, // Money
+			"Heavy Drugs Convoy", // Marker text
+			75000, // Money
 			[
 				[
 					["I_MBT_03_cannon_F"], // Veh 1
@@ -179,7 +179,7 @@ _drop_item =
 _successExec =
 {
 	// Mission completed
-	_drugpilerandomizer = [4,6];
+	_drugpilerandomizer = [10,15];
 	_drugpile = _drugpilerandomizer call BIS_fnc_SelectRandom;
 	
 	for "_i" from 1 to _drugpile do 
@@ -194,12 +194,12 @@ _successExec =
 	  [_item, _lastPos] call _drop_item;
 	};
 	
-	for "_i" from 1 to 10 do
+	for "_i" from 1 to 5 do
 	{
 		_cash = createVehicle ["Land_Money_F", _lastPos, [], 5, "None"];
 		_cash setPos ([_lastPos, [[2 + random 3,0,0], random 360] call BIS_fnc_rotateVector2D] call BIS_fnc_vectorAdd);
 		_cash setDir random 360;
-		_cash setVariable ["cmoney", _moneyAmount / 10, true];
+		_cash setVariable ["cmoney", _moneyAmount / 5, true];
 		_cash setVariable ["owner", "world", true];
 	};
 

@@ -75,15 +75,15 @@ A3W_staticWeaponSaving = 1;        // Save locked static weapons and their magaz
 A3W_warchestSaving = 1;            // Save warchest objects deployed by players between server restarts (0 = no, 1 = yes)
 A3W_warchestMoneySaving = 1;       // Save warchest team money between server restarts (0 = no, 1 = yes)
 A3W_spawnBeaconSaving = 1;         // Save spawn beacons between server restarts (0 = no, 1 = yes)
-A3W_objectLifetime = 3*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
+A3W_objectLifetime = 2*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
 A3W_vehicleLifetime = 0;           // Maximum lifetime in hours for saved vehicles across server restarts, regardless of usage (0 = no time limit)
-A3W_vehicleMaxUnusedTime = 3*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
-A3W_serverSavingInterval = 1*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
+A3W_vehicleMaxUnusedTime = 2*24;   // Maximum parking time in hours after which unused saved vehicles will be marked for deletion (0 = no time limit)
+A3W_serverSavingInterval = 3*60;   // Interval in seconds between automatic vehicle & object saves; should be kept at 1 min for profileNamespace and iniDB, while for extDB it can be relaxed to 3-5 mins
 A3W_mineSaving = 1;                // Save placed mines between server restarts (0 = no, 1 = yes)
-A3W_mineLifetime = 2*24;           // Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
+A3W_mineLifetime = 1*24;           // Maximum lifetime in hours for saved mines across server restarts (0 = no time limit)
 A3W_privateStorage = 1;            // Enable persistent private storage locations across the map (0 = no, 1 = yes)
 A3W_privateParking = 1;            // If vehicleSaving = 1 and savingMethod = "extDB" or "sock", enable persistent private parking locations across the map (0 = no, 1 = yes)
-A3W_privateParkingLimit = 2;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
+A3W_privateParkingLimit = 3;       // Maximum amount of vehicles allowed in private parking (0 = no limit)
 A3W_privateParkingCost = 1000;     // Cost to retrieve an individual vehicle from private parking
 A3W_vehicleLocking = 1;            // Enable vehicle locking and lockpicking (0 = no, 1 = yes)
 
@@ -148,7 +148,7 @@ A3W_payrollAmount = 1000;           // Amount of money rewarded per territory on
 A3W_serverMissions = 1;            // Enable server missions (0 = no, 1 = yes)
 A3W_missionsDifficulty = 1;        // Missions difficulty (0 = normal, 1 = hard)
 A3W_missionFarAiDrawLines = 1;     // Draw small red lines on the map from mission markers to individual units & vehicles which are further away than 75m from the objective (0 = no, 1 = yes)
-A3W_missionsQuantity = 8;          // Number of missions running at the same time (0 to 6)
+A3W_missionsQuantity = 7;          // Number of missions running at the same time (0 to 6)
 A3W_heliPatrolMissions = 1;        // Enable missions involving flying helicopters piloted by AI (0 = no, 1 = yes)
 A3W_underWaterMissions = 1;        // Enable underwater missions which require diving gear (0 = no, 1 = yes)
 A3W_mainMissionDelay = 10*60;      // Time in seconds between Main Missions
@@ -163,16 +163,16 @@ MainMissions =
 [
 	// Mission filename, weight
 	//["mission_ArmedDiversquad", 1],
-	["mission_Coastal_Convoy", 0.5],
+	["mission_Coastal_Convoy", 1],
 	//["mission_Convoy", 1],
 	["mission_Hackers", 0.1],
 	["mission_HostileHeliFormation", 0.5],
 	["mission_HostileJetFormation", 0.5],
 	["mission_APC", 1],
-	["mission_MBT", 1],
+	["mission_MBT", 1.5],
 	["mission_LightArmVeh", 1],
 	["mission_ArmedHeli", 1],
-	["mission_AbandonedJet", 0.3]
+	["mission_AbandonedJet", 0.5]
 	//["mission_CivHeli", 1]
 ];
 
@@ -181,17 +181,20 @@ SideMissions =
 	["mission_HostileHelicopter", 0.5],
 	//["mission_MiniConvoy", 1],
 	["mission_SunkenSupplies", 0.5],
+	["mission_SunkenTreasure", 0.5],
 	["mission_TownInvasion", 1],
-	["mission_AirWreck", 1],
-	["mission_WepCache", 1],
+	["mission_AirWreck", 0.5],
+	//["mission_WepCache", 1],
 	["mission_Outpost", 1],
+	["mission_drugsRunners", 1],
+	["mission_GeoCache", 0.5],
+	["mission_Smugglers", 1],
 	["mission_Truck", 1]
 ];
 
 MoneyMissions =
 [
 	["mission_MoneyShipment", 1],
-	["mission_SunkenTreasure", 0.5],
-	["mission_MoneyShipment2", 1],
-	["mission_MoneyShipment3", 1]
+	["mission_DrugsConvoy", 1],
+	["mission_MilitaryConvoy", 1]
 ];
