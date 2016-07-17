@@ -251,6 +251,16 @@ pp_park_allowed = {
   _parked_vehicles = _player getVariable ["parked_vehicles", []];
   init(_count,count(_parked_vehicles));
 
+  _supporterLevel = _player getVariable ["SupporterLevel", 0];
+
+  if (_supporterLevel == 1) then
+  {
+    pp_max_player_vehicles = 5;
+  };
+  if (_supporterLevel == 2) then
+  {
+    pp_max_player_vehicles = 7;
+  };
   //check if the parking is full
   if (isSCALAR(pp_max_player_vehicles) && {pp_max_player_vehicles > 0 && {_count >= pp_max_player_vehicles}}) exitWith {
     _msg = format["You already have %1 vehicle(s) parked. There are no more parking spaces available.", _count];

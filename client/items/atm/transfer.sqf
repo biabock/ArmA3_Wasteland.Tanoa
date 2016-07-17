@@ -52,13 +52,19 @@ if (_balance < _total) exitWith
 
 _supporterLevel = _selAcc getVariable ["SupporterLevel", 0];
 
-if (_supporterLevel > 0) then
+if (_supporterLevel <= 0) then
 {
-	_maxBalance = 4000000;
-}
-else {
 	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
 };
+if (_supporterLevel == 1) then
+{
+	_maxBalance = 4000000;
+};
+if (_supporterLevel >= 2) then
+{
+	_maxBalance = 6000000;
+};
+
 _destBalance = _selAcc getVariable ["bmoney", 0];
 
 if (_destBalance >= _maxBalance) exitWith

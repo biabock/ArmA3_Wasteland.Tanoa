@@ -32,12 +32,17 @@ if (player getVariable ["cmoney", 0] < _amount) exitWith
 
 _balance = player getVariable ["bmoney", 0];
 
-if (_supporterLevel > 0) then
+if (_supporterLevel <= 0) then
+{
+	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+};
+if (_supporterLevel == 1) then
 {
 	_maxBalance = 4000000;
-}
-else {
-	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+};
+if (_supporterLevel >= 2) then
+{
+	_maxBalance = 6000000;
 };
 
 if (_balance + _amount > _maxBalance) then

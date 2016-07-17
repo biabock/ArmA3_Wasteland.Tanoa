@@ -13,12 +13,17 @@ private ["_dialog", "_balance", "_amountInput", "_accDropdown", "_feeText", "_to
 
 _supporterLevel = player getVariable ["SupporterLevel", 0];
 
-if (_supporterLevel > 0) then
+if (_supporterLevel <= 0) then
+{
+	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+};
+if (_supporterLevel == 1) then
 {
 	_maxBalance = 4000000;
-}
-else {
-	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+};
+if (_supporterLevel >= 2) then
+{
+	_maxBalance = 6000000;
 };
 
 _dialog = findDisplay AtmGUI_IDD;

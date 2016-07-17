@@ -8,12 +8,17 @@ _type = param [0, "", [""]];
 
 _supporterLevel = player getVariable ["SupporterLevel", 0];
 
-if (_supporterLevel > 0) then
+if (_supporterLevel <= 0) then
+{
+	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+};
+if (_supporterLevel == 1) then
 {
 	_maxBalance = 4000000;
-}
-else {
-	_maxBalance = ["A3W_atmMaxBalance", 1000000] call getPublicVar;
+};
+if (_supporterLevel >= 2) then
+{
+	_maxBalance = 6000000;
 };
 
 switch (toLower _type) do
@@ -123,7 +128,7 @@ switch (toLower _type) do
 
 			_newBalance = _balance + _amount;
 			
-			if (_newBalance > _maxBalance) exitWith {}; // account would exceed or has reached max balance
+			//if (_newBalance > _maxBalance) exitWith {}; // account would exceed or has reached max balance
 
 			_player setVariable ["bmoney", _newBalance, true];
 
