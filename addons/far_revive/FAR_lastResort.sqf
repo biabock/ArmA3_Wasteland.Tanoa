@@ -4,6 +4,10 @@
 //	@file Name: FAR_lastResort.sqf
 //	@file Author: AgentRev
 
+private ["_randomSound"];
+
+_randomSound = selectRandom ["lastresort.ogg", "johncena.ogg", "john-stamos.ogg", "price-is-right.ogg", "R2D2.ogg", "scarface.ogg", "sloth.ogg", "trombone.ogg", "predator.ogg"];
+
 if !(player getVariable ["performingDuty", false]) then
 {
 	// biggest to smallest
@@ -24,7 +28,7 @@ if !(player getVariable ["performingDuty", false]) then
 			player setVariable ["performingDuty", true];
 
 			player removeMagazine _magType;
-			playSound3D [call currMissionDir + "client\sounds\lastresort.ogg", player, false, getPosASL player, 1, 1, 500];
+			playSound3D [call currMissionDir + "client\sounds\" + _randomSound, player, false, getPosASL player, 1, 1, 500];
 
 			sleep 1.5;
 
