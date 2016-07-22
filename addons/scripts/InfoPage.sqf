@@ -9,7 +9,7 @@
 sleep 30;   //delay before message is displayed after logging in
 	
 _text = "
-<t align='center'><t shadow= 1 shadowColor='#0000ff'><t size='1.2'>ArmaBrothers.com Wasteland Tanoa</t>
+<t align='center'><t shadow= 1 shadowColor='#ff0000'><t size='1.2'>ArmaBrothers.com Wasteland Tanoa</t>
 <br />
 <t align='center'><t size='1'><t shadow= 1 shadowColor='#000000'>www.ArmaBrothers.com</t><br />
 <t align='center'><t size='1'><t shadow= 1 shadowColor='#000000'>ts.armabrothers.com</t><br />
@@ -22,7 +22,7 @@ _text = "
 <t align='left'><img size='2' shadow = 0 image='mapConfig\img\del.paa'/></t><t align='left'><t size='1'><t shadow= 1 shadowColor='#000000'> Emergency Eject</t><br />
 <t align='left'><img size='2' shadow = 0 image='mapConfig\img\v.paa'/></t><t align='left'><t size='1'><t shadow= 1 shadowColor='#000000'> Open/Cut Parachute</t><br />
 <br />
-<t align='center'><t size='1.2'><t shadow= 1 shadowColor='#0000ff'>Have fun and respect other players. Hacking or exploiting will get you banned</t>
+<t align='center'><t size='1.2'><t shadow= 1 shadowColor='#ff0000'>Have fun and respect other players. Hacking or exploiting will get you banned</t>
 <br />";
 
 
