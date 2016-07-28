@@ -199,7 +199,7 @@ class playerSettings {
 		class btnAirDropMenu : w_RscButton {
 			idc = -1;
 			text = "AirDrop";
-			onButtonClick = "[] execVM 'client\systems\playerMenu\airdrop.sqf'";
+			onButtonClick = "[] execVM 'addons\APOC_Airdrop_Assistance\APOC_cli_startAirdrop.sqf'";
 			x = 0.02; y = 0.5;
 			w = 0.125; h = 0.033 * safezoneH;
 		};

@@ -5,41 +5,48 @@
 //Starts off much the same as the client start.  This is to find information from config arrays
 
 
-private ["_type","_selection","_player"]; //Variables coming from command menu and client side APOC_cli_startAirdrop
-_type 				= _this select 0;
-_selectionNumber 	= _this select 1;
-_player 			= _this select 2;
+if !(isDedicated) exitWith{};
 
-diag_log format ["SERVER - Apoc's Airdrop Assistance - Player: %1, Drop Type: %2, Selection #: %3",name _player,_type,_selectionNumber];
-//hint format ["Well we've made it this far! %1, %2, %3,",_player,_type,_selectionNumber];
-_selectionArray = [];
 
-switch (_type) do {
-	case "vehicle": {_selectionArray = APOC_AA_VehOptions};
-	case "supply": 	{_selectionArray = APOC_AA_SupOptions};
-	case "picnic":	{_selectionArray = APOC_AA_SupOptions};
-	default 		{_selectionArray = APOC_AA_VehOptions; diag_log "AAA - Default Array Selected - Something broke";};
+private ["_DropType","_DropSelection","_player", "_DropDesc","_DropPrice","_DropType","_object","_playerMoney", "_heliDirection", "_heliStartDistance", "_flyHeight"]; //Variables coming from APOC_Airdrop_Assistance_XM8.sqf
+_DropType 			 	= _this select 0;
+_DropSelection		 	= _this select 1;
+_player 				= _this select 2;
+_heliDirection			= _this select 3;
+
+diag_log format ["SERVER - Apoc's Airdrop Assistance - Player: %1, Drop Type: %2, Selection: %3",name _player,_DropType,_DropSelection];
+hint format ["Well we've made it this far! %1, %2, %3,",_player,_DropType,_DropSelection];
+
+//Very convoluted system to extract the price from the arrays
+ for "_i" from 0 to (count APOC_AA_Drops)-1 do {
+    {
+      _Selection = _x select 1;
+      if (_DropSelection == _Selection) then
+      {
+        _DropDesc = _x select 0;
+        _DropPrice = _x select 2;
+        _DropType = _x select 3;
+      }
+    } forEach ((APOC_AA_Drops select _i) select 1);
 };
-
-_selectionName 	= (_selectionArray select _selectionNumber) select 0;
-_selectionClass = (_selectionArray select _selectionNumber) select 1;
-_price 			= (_selectionArray select _selectionNumber) select 2;
-// Moved money removal until after the drop point.
 
 //OK, now the real fun
 
 /////// Let's spawn us  an AI helo to carry the cargo /////////////////////////////////////////////////
 
- _heliType = "B_Heli_Transport_03_unarmed_F";
- _center = createCenter civilian;
+_heliType = "B_Heli_Transport_03_unarmed_F";
+_center = createCenter civilian;
 _grp = createGroup civilian;
+
 if(isNil("_grp2"))then{_grp2 = createGroup civilian;}else{_grp2 = _grp2;};
-_flyHeight = 350;
+_flyHeight = 200; //Distance from ground that heli will fly at
 _dropSpot = [(position _player select 0),(position _player select 1),_flyHeight];
-_heliDirection = random 360;
-_flyHeight = 200;  //Distance from ground that heli will fly at
-_heliStartDistance = 5000;
+_heliStartDistance = 2000;
 _spos=[(_dropSpot select 0) - (sin _heliDirection) * _heliStartDistance, (_dropSpot select 1) - (cos _heliDirection) * _heliStartDistance, (_flyHeight+200)];
+
+_heliDistance = 5000;
+_dir = ((_dropSpot select 0) - (_spos select 0)) atan2 ((_dropSpot select 1) - (_spos select 1));
+_flySpot = [(_dropSpot select 0) + (sin _dir) * _heliDistance, (_dropSpot select 1) + (cos _dir) * _heliDistance, _flyHeight];
 
 diag_log format ["AAA - Heli Spawned at %1", _spos];
 _heli = createVehicle [_heliType, _spos, [], 0, "FLY"];
@@ -52,10 +59,6 @@ _crew moveInDriver _heli;
 _crew allowDamage false;
 
 _heli setCaptive true;
-
-_heliDistance = 5000;
-_dir = ((_dropSpot select 0) - (_spos select 0)) atan2 ((_dropSpot select 1) - (_spos select 1));
-_flySpot = [(_dropSpot select 0) + (sin _dir) * _heliDistance, (_dropSpot select 1) + (cos _dir) * _heliDistance, _flyHeight];
 
 _grp setCombatMode "BLUE";
 _grp setBehaviour "CARELESS";
@@ -73,17 +76,19 @@ _wp1 = _grp addWaypoint [_flySpot, 0, 2];
 _heli flyInHeight _flyHeight;
 
 //////// Create Purchased Object //////////////////////////////////////////////
-_object = switch (_type) do {
+_object = switch (_DropType) do {
 	case "vehicle":
 	{
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
-		_object = createVehicle [_selectionClass, _objectSpawnPos, [], 0, "None"];
+		_object = createVehicle [_DropSelection, _objectSpawnPos, [], 0, "None"];
 		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
 		_object setVariable ["A3W_purchasedStoreObject", true];
 		_object setVariable ["A3W_purchasedVehicle", true, true];
 		_object setVariable ["ownerUID", getPlayerUID _player, true];
-		_object setVariable ["ownerName", name _player, true];
+		_object setVariable ["R3F_LOG_Disabled", true, true]; // Make vehicle locked
+		_object lock 2; // Make vehicle locked
 		[_object, false] call vehicleSetup;
+		[_object, "#(rgb,1,1,1)color(0.01,0.01,0.01,1)"] call applyVehicleTexture; // Apply black color
 		if (_object getVariable ["A3W_purchasedVehicle", false] && !isNil "fn_manualVehicleSave") then
 		{
 			_object call fn_manualVehicleSave;
@@ -96,16 +101,9 @@ _object = switch (_type) do {
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
 		_object setVariable ["A3W_purchasedStoreObject", true];
-		[_object, _selectionClass] call fn_refillbox;
-		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
-		_object
-	};
-	case "picnic":  //Beware of Bears!
-	{
-		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
-		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
-		diag_log format ["Apoc's Airdrop Assistance - Object Spawned at %1", position _object];
-		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["R3F_LOG_Disabled", false, true];
+		[_object, _DropSelection] call serv_fillAirdrop;
+		_object setVariable ["A3W_inventoryLockR3F", false, true];
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
 	};
@@ -113,7 +111,9 @@ _object = switch (_type) do {
 		_objectSpawnPos = [(_spos select 0), (_spos select 1), (_spos select 2) - 5];
 		_object = createVehicle ["B_supplyCrate_F", _objectSpawnPos, [], 0, "None"];
 		_object setVariable ["A3W_purchasedStoreObject", true];
+		_object setVariable ["R3F_LOG_Disabled", false, true];
 		[_object, "mission_USSpecial"] call fn_refillbox;
+		_object setVariable ["A3W_inventoryLockR3F", false, true];
 		_object attachTo [_heli, [0,0,-5]]; //Attach Object to the heli
 		_object
 		};
@@ -130,7 +130,7 @@ While {true} do {
 };
 // Let's handle the money after this tricky spot - This way players won't be charged for non-delivered goods!
 _playerMoney = _player getVariable ["bmoney", 0];
-		if (_price > _playerMoney) exitWith{
+		if (_DropPrice > _playerMoney) exitWith{
 			{ _x setDamage 1; } forEach units _grp;
 			_heli setDamage 1;
 			_object setDamage 1;
@@ -139,17 +139,21 @@ _playerMoney = _player getVariable ["bmoney", 0];
 
 //Server Style Money handling
 _balance = _player getVariable ["bmoney", 0];
-_newBalance = _balance - _price;
+_newBalance = _balance - _DropPrice;
 _player setVariable ["bmoney", _newBalance, true];
 [getPlayerUID _player, [["BankMoney", _newBalance]], []] call fn_saveAccount;
 
 //  Now on to the fun stuff:
 
 diag_log format ["Apoc's Airdrop Assistance - Object at %1, Detach Up Next", position _object];  //A little log love to confirm the location of this new creature
+playSound3D ["a3\sounds_f\air\sfx\SL_rope_break.wss",_heli,false,getPosASL _heli,3,1,500];
 detach _object;  //WHEEEEEEEEEEEEE
 _objectPosDrop = position _object;
 _heli fire "CMFlareLauncher";
 _heli fire "CMFlareLauncher";
+
+sleep 2;
+playSound3D ["a3\sounds_f\sfx\radio\ambient_radio22.wss",_player,false,getPosASL _player,3,1,25];
 
 //Delete heli once it has proceeded to end point
 	[_heli,_grp,_flySpot,_dropSpot,_heliDistance] spawn {
@@ -193,7 +197,7 @@ WaitUntil {(((position _object) select 2) < (_flyHeight-20))};
 		_flare1= "F_40mm_Green" createVehicle getPos _object;
 		_flare1 attachto [_object,[0,0,-0.5]];
 
-		if (_type == "vehicle") then {_object allowDamage true;}; //Turn on damage for vehicles once they're in the 'chute.  Could move this until they hit the ground.  Admins choice.
+		if (_DropType == "vehicle") then {_object allowDamage true;}; //Turn on damage for vehicles once they're in the 'chute.  Could move this until they hit the ground.  Admins choice.
 
 WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 		detach _object;
@@ -201,20 +205,7 @@ WaitUntil {((((position _object) select 2) < 1) || (isNil "_para"))};
 		//_smoke2 attachto [_object,[0,0,-0.5]];
 		_flare2= "F_40mm_Green" createVehicle getPos _object;
 		//_flare2 attachto [_object,[0,0,-0.5]];
-		sleep 2;
-		if (_type == "picnic") then {  //So let's go ahead and delete that ugly ammo pallet and create a wonderful picnic basket/barrel
-			_objectLandPos = position _object;
-			deleteVehicle _object;
-			_object2 = switch (_selectionClass) do {
-				case "Land_Sacks_goods_F": {
-					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
-					_object2 setVariable ["food", 50, true];
-					_object2
-				}; //A very big picnic, no?
-				case "Land_BarrelWater_F": {
-					_object2 = createVehicle [_selectionClass, _objectLandPos, [], 0, "None"];
-					_object2 setVariable ["water",50, true];
-					_object2
-				};
-			};
+		if (APOC_AA_DamageOnWhenLanded) then {
+			sleep 5;	//Give it a few seconds to get all landed and such.
+			if (_DropType == "vehicle") then {_object allowDamage true;}; //Turn on damage for vehicles once they're on the ground.
 		};

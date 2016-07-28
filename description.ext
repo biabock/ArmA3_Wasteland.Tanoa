@@ -73,6 +73,7 @@ briefing = 0; // if 0, skip Continue button
 #include "client\systems\hud\dialog\downloadData.hpp"
 #include "addons\UniformPainter\dialog\UniformPainter_mainMenu.hpp"
 #include "addons\VehiclePainter\dialog\VehiclePainter_mainMenu.hpp"
+#include "addons\APOC_Airdrop_Assistance\APOC_Airdrop_dialog.hpp"
 
 class RscTitles
 {
