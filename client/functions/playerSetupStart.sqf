@@ -25,6 +25,7 @@ if (["A3W_unlimitedStamina"] call isConfigOn) then
 };
 
 enableSentences false;
+enableEnvironment false;
 
 removeAllWeapons _player;
 removeUniform _player;
