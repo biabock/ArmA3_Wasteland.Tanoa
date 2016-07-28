@@ -217,6 +217,10 @@ if (!isNil "_itemEntry") then
 					_description = "Thermally insulated";
 				};
 			};
+			case "laser":
+			{
+				_description = "THERMAL NOT WORKING<br/>Will be fixed soon.";
+			};
 			default
 			{
 				switch (true) do
