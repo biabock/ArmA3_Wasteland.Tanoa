@@ -85,6 +85,7 @@ _object = switch (_DropType) do {
 		_object setVariable ["A3W_purchasedStoreObject", true];
 		_object setVariable ["A3W_purchasedVehicle", true, true];
 		_object setVariable ["ownerUID", getPlayerUID _player, true];
+		_object setVariable ["ownerName", name _player, true];
 		_object setVariable ["R3F_LOG_Disabled", true, true]; // Make vehicle locked
 		_object lock 2; // Make vehicle locked
 		[_object, false] call vehicleSetup;
