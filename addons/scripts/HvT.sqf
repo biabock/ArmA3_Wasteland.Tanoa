@@ -4,7 +4,7 @@
 
 #define HVT_AMOUNT 90000  // how much a player needs to be carrying to become a HvT
 #define HINT_DELAY 60  // number of seconds between each HvT reminder hint
-#define MARKER_REFRESH 30  // number of seconds between each HvT marker refresh
+#define MARKER_REFRESH 90  // number of seconds between each HvT marker refresh
 
 if (isServer) then
 {
@@ -50,11 +50,11 @@ while {true} do
 		{
 			createMarker [_markerName, getPosWorld player];
 			_markerName setMarkerColor "ColorRed";
-			//_markerName setMarkerText format [" VIP: %1 ($%2k)", profileName, (floor ((player getVariable ["cmoney",0]) / 1000)) call fn_numToStr];
-			_markerName setMarkerText format ["Priority Target: %1", profileName];
-			_markerName setMarkerSize [0.75, 0.75];
+			_markerName setMarkerText format [" Priority Target: %1 ($%2k)", profileName, (floor ((player getVariable ["cmoney",0]) / 1000)) call fn_numToStr];
+			//_markerName setMarkerText format ["Priority Target: %1", profileName];
+			_markerName setMarkerSize [0.8, 0.8];
 			_markerName setMarkerShape "ICON";
-			_markerName setMarkerType "mil_warning";
+			_markerName setMarkerType "mil_dot";
 
 			_lastMarker = diag_tickTime;
 			_markerTarget = player;
