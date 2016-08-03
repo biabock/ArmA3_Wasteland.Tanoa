@@ -26,7 +26,7 @@ class APOC_AirdropMenu {
 
 			moving = true;
 			x = 0.0; y = 0.1;
-			w = .745; h = 0.65;
+			w = .96; h = 0.75;
 		};
 
 		class TopBar: IGUIBack
@@ -37,7 +37,7 @@ class APOC_AirdropMenu {
 
 			x = 0;
 			y = 0.1;
-			w = 0.745;
+			w = .96;
 			h = 0.05;
 		};
 
@@ -46,7 +46,7 @@ class APOC_AirdropMenu {
 			text = "AirDrop Menu";
 			sizeEx = 0.04;
 			shadow = 2;
-			x = 0.260; y = 0.1;
+			x = 0.4; y = 0.1;
 			w = 0.3; h = 0.05;
 		};
 	};
