@@ -2,7 +2,7 @@
 //	@file Author: IvanMMM, micovery, AgentRev
 
 scopeName "UAV_Control";
-private ["_perm", "_uav", "_uavTerminal", "_currUav"];
+private ["_perm", "_uav", "_currUav"];
 _perm = ["A3W_uavControl", "side"] call getPublicVar;
 
 if (_perm == "side") then
@@ -39,19 +39,9 @@ while {true} do
 
 		if (_perm == "group" && {_ownerUID in ((units player) apply {getPlayerUID _x})}) exitWith {};
 
-		switch (playerSide) do
-		{
-			case BLUFOR: { _uavTerminal = "B_UavTerminal" };
-			case OPFOR:	 { _uavTerminal = "O_UavTerminal" };
-			default	     { _uavTerminal = "I_UavTerminal" };
-		};
 		player connectTerminalToUAV objNull;
-		{ player unassignItem _x } forEach ["B_UavTerminal", "O_UavTerminal", "I_UavTerminal"]; // unassign uav terminal
-		{ player removeItem _x } forEach ["B_UavTerminal", "O_UavTerminal", "I_UavTerminal"]; // remove the uav terminal
 		playSound "FD_CP_Not_Clear_F";
-		["You are not allowed to connect to this unmanned vehicle. Your terminal will be replaced.", 5] call mf_notify_client;
-		sleep 5;
-		player linkItem _uavTerminal;
+		["You are not allowed to connect to this unmanned vehicle.", 5] call mf_notify_client;
 	};
 
 	if (alive _uav && _uav == getConnectedUAV player) then
