@@ -18,7 +18,7 @@ _soldierTypes = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_
 _uniformTypes = ["U_B_HeliPilotCoveralls"];
 _vestTypes = ["V_PlateCarrier1_rgr","V_PlateCarrier2_rgr"];
 _backpackTypes = ["B_Parachute"];
-_weaponTypes = ["arifle_TRG20_F","LMG_Mk200_F","arifle_MXM_F","arifle_MX_GL_F"];
+_weaponTypes = ["arifle_AK12_F","LMG_Mk200_F","arifle_MXM_F","arifle_MX_GL_F"];
 
 _group = _this select 0;
 _position = _this select 1;

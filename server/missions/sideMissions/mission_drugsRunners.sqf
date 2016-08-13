@@ -2,14 +2,15 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 2.1
-//	@file Name: mission_drugsRunners.sqf
+//	@file Name: mission_WalterWhite.sqf
 //	@file Author: JoSchaap / routes by Del1te - (original idea by Sanjo), AgentRev, LouD
+//	@file Tanoa Edit: GriffinZS
 //	@file Created: 31/08/2013 18:19
 
 if (!isServer) exitwith {};
 #include "sideMissionDefines.sqf";
 
-private ["_convoyVeh", "_veh1", "_veh2", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_drop_item", "_drugpilerandomizer", "_drugpile", "_explosivePos", "_explosive"];
+private ["_convoyVeh", "_veh1", "_veh2", "_createVehicle", "_vehicles", "_leader", "_speedMode", "_waypoint", "_vehicleName", "_numWaypoints", "_drop_item", "_drugpilerandomizer", "_drugpile"];
 
 _setupVars =
 {
@@ -25,11 +26,11 @@ _setupObjects =
 	// pick the vehicles for the convoy
 	_convoyVeh = if (missionDifficultyHard) then
 	{
-		["C_Hatchback_01_sport_F"]
+		["O_T_LSV_02_armed_F"]
 	}
 	else
 	{
-		["C_Hatchback_01_sport_F"]
+		["O_T_LSV_02_armed_F"]
 	};
 
 	_veh1 = _convoyVeh select 0;
@@ -54,16 +55,12 @@ _setupObjects =
 
 		_soldier = [_aiGroup, _position] call createRandomSoldier;
 		_soldier moveInCargo [_vehicle, 0];
-
-		switch (true) do
-		{
-			case (_type isKindOf "C_Hatchback_01_sport_F"):
-			{
-				[_vehicle, "#(rgb,1,1,1)color(0.01,0.01,0.01,1)", [0]] call applyVehicleTexture; // Apply black color
-			};
-		};
+		
+		_vehicle addEventhandler ["HandleDamage", {0.75*(_this select 2)}];
+		_vehicle addEventhandler ["HandleDamage", {if (_this select 1 in ["wheel_1_1_steering","wheel_1_2_steering","wheel_2_1_steering","wheel_2_2_steering"]) then {0*(_this select 2)}}];
 
 		[_vehicle, _aiGroup] spawn checkMissionVehicleLock;
+		[_vehicle, "client\images\vehicleTextures\hippie.paa"] call applyVehicleTexture;
 
 		_vehicle
 	};
@@ -82,8 +79,8 @@ _setupObjects =
 	_leader = effectiveCommander (_vehicles select 0);
 	_aiGroup selectLeader _leader;
 
-	_aiGroup setCombatMode "GREEN"; // BLUE = units will never fire
-	_aiGroup setBehaviour "CARELESS"; // units will try to stay on roads, not caring about finding any cover
+	_aiGroup setCombatMode "GREEN"; // units will never fire
+	_aiGroup setBehaviour "CARELESS"; // nits will try to stay on roads, not caring about finding any cover
 	_aiGroup setFormation "STAG COLUMN";
 
 	_speedMode = if (missionDifficultyHard) then { "FULL" } else { "FULL" };
@@ -106,7 +103,7 @@ _setupObjects =
 	_missionPicture = getText (configFile >> "CfgVehicles" >> _veh1 >> "picture");
 	_vehicleName = getText (configFile >> "CfgVehicles" >> _veh1 >> "displayName");
 
-	_missionHintText = format ["Drugs runners driving a <t color='%2'>%1</t> are moving drugs around Tanoa. Stop them quickly!", _vehicleName, sideMissionColor];
+	_missionHintText = format ["Rumors say, a <t color='%2'>%1</t> transporting lots of <t color='%2'>drugs</t>. Stop this car and kill these bastard!", _vehicleName, sideMissionColor];
 
 	_numWaypoints = count waypoints _aiGroup;
 };
@@ -141,7 +138,7 @@ _drop_item =
 _successExec =
 {
 	// Mission completed
-	_drugpilerandomizer = [8,12];
+	_drugpilerandomizer = [7,8,9];
 	_drugpile = _drugpilerandomizer call BIS_fnc_SelectRandom;
 	
 	for "_i" from 1 to _drugpile do 
@@ -156,11 +153,7 @@ _successExec =
 	  [_item, _lastPos] call _drop_item;
 	};
 	
-	_explosivePos = getPosATL (_vehicles select 0);
-	_explosive = createMine ["SatchelCharge_F", _explosivePos, [], 0];
-	_explosive setDamage 1;
-
-	_successHintMessage = "You have stopped the drugs runners but they blew up their car! The drugs are yours to take!";
+	_successHintMessage = "Good job! The Drugs Transport has been stopped! Collect the drugs and .. sell or use it. It's all yours!";
 };
 
 _this call sideMissionProcessor;

@@ -6,7 +6,7 @@
 
 if (!isServer) exitWith {};
 
-private ["_group", "_pos", "_nbUnits", "_unitTypes", "_uPos", "_unit", "_uniformTypes"];
+private ["_group", "_pos", "_nbUnits", "_unitTypes", "_uPos", "_unit"];
 
 _group = _this select 0;
 _pos = _this select 1;
@@ -41,13 +41,13 @@ for "_i" from 1 to _nbUnits do
 	removeHeadgear _unit;
 	
 
-	_unit addVest "V_PlateCarrier1_tna_F";
+	_unit addVest "V_PlateCarrier1_blk";
+	_unit addMagazine "30Rnd_762x39_Mag_F";
 	_unit addMagazine "30Rnd_762x39_Mag_F";
 	_unit addMagazine "30Rnd_762x39_Mag_F";
 	_unit addMagazine "30Rnd_762x39_Mag_F";
 	
-	_uniformTypes = ["U_I_C_Soldier_Para_1_F", "U_I_C_Soldier_Para_2_F", "U_I_C_Soldier_Para_3_F", "U_I_C_Soldier_Para_4_F", "U_I_C_Soldier_Para_5_F"];
-	_unit forceAddUniform (_uniformTypes call BIS_fnc_selectRandom);
+	_unit forceAddUniform "U_B_CTRG_Soldier_F";
 	_unit addHeadgear "H_ShemagOpen_tan";
 
 	switch (true) do
@@ -65,17 +65,21 @@ for "_i" from 1 to _nbUnits do
 		{
 			_unit addBackpack "B_Kitbag_mcamo";
 			_unit addWeapon "arifle_AK12_F";
-			_unit addMagazine "Titan_AT";
-			_unit addWeapon "launch_I_Titan_short_F";
-			_unit addMagazine "Titan_AT";
-			_unit addMagazine "Titan_AT";
+			_unit addMagazine "RPG7_F";
+			_unit addWeapon "launch_RPG7_F";
+			_unit addMagazine "RPG7_F";
+			_unit addMagazine "RPG7_F";
 		};
 		// Rifleman
 		default
 		{
 			if (_unit == leader _group) then
 			{
-				_unit addWeapon "arifle_AK12_F";
+				_unit addBackpack "B_Kitbag_mcamo";
+				_unit addMagazine "1Rnd_HE_Grenade_shell";
+				_unit addWeapon "arifle_AK12_GL_F";
+				_unit addMagazine "1Rnd_HE_Grenade_shell";
+				_unit addMagazine "1Rnd_HE_Grenade_shell";
 				_unit addMagazine "HandGrenade";
 				_unit setRank "SERGEANT";
 			}
@@ -89,6 +93,9 @@ for "_i" from 1 to _nbUnits do
 
 	_unit addPrimaryWeaponItem "acc_flashlight";
 	_unit enablegunlights "forceOn";
+	
+	_unit setObjectTextureGlobal [0, "client\images\vehicleTextures\isis.paa"];
+	backpackContainer _unit setObjectTextureGlobal  [0, "client\images\vehicleTextures\isis.paa"];
 
 	_unit addRating 1e11;
 	_unit spawn refillPrimaryAmmo;

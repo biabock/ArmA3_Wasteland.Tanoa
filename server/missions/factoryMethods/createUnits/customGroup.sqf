@@ -6,7 +6,7 @@
 
 if (!isServer) exitWith {};
 
-private ["_group", "_pos", "_nbUnits", "_unitTypes", "_uPos", "_unit"];
+private ["_group", "_pos", "_nbUnits", "_unitTypes", "_uniformTypes", "_uPos", "_unit"];
 
 _group = _this select 0;
 _pos = _this select 1;
@@ -23,6 +23,8 @@ _unitTypes =
 	"C_man_polo_6_F", "C_man_polo_6_F_euro", "C_man_polo_6_F_afro", "C_man_polo_6_F_asia"
 ];
 
+_uniformTypes = ["U_I_C_Soldier_Para_1_F", "U_I_C_Soldier_Para_2_F", "U_I_C_Soldier_Para_3_F", "U_I_C_Soldier_Para_4_F", "U_I_C_Soldier_Para_5_F"];
+
 for "_i" from 1 to _nbUnits do
 {
 	_uPos = _pos vectorAdd ([[random _radius, 0, 0], random 360] call BIS_fnc_rotateVector2D);
@@ -37,28 +39,28 @@ for "_i" from 1 to _nbUnits do
 	removeHeadgear _unit;
 	removeGoggles _unit;
 
-	_unit addVest "V_PlateCarrier1_rgr";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
+	_unit addVest "V_PlateCarrier1_tna_F";
+	_unit addMagazine "30Rnd_762x39_Mag_F";
+	_unit addMagazine "30Rnd_762x39_Mag_F";
+	_unit addMagazine "30Rnd_762x39_Mag_F";
 
 	switch (true) do
 	{
 		// Grenadier every 3 units
 		case (_i % 3 == 0):
 		{
-			_unit addUniform "U_B_CombatUniform_mcam_vest";
+			_unit forceAddUniform (_uniformTypes call BIS_fnc_selectRandom);
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
-			_unit addWeapon "arifle_TRG21_GL_F";
+			_unit addWeapon "arifle_AK12_GL_F";
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
 		};
 		// RPG every 7 units, starting from second one
 		case ((_i + 5) % 7 == 0):
 		{
-			_unit addUniform "U_B_CombatUniform_mcam_tshirt";
+			_unit forceAddUniform (_uniformTypes call BIS_fnc_selectRandom);
 			_unit addBackpack "B_Kitbag_mcamo";
-			_unit addWeapon "arifle_TRG20_F";
+			_unit addWeapon "arifle_AK12_F";
 			_unit addMagazine "Titan_AT";
 			_unit addWeapon "launch_I_Titan_short_F";
 			_unit addMagazine "Titan_AT";
@@ -67,16 +69,16 @@ for "_i" from 1 to _nbUnits do
 		// Rifleman
 		default
 		{
-			_unit addUniform "U_B_CombatUniform_mcam";
+			_unit forceAddUniform (_uniformTypes call BIS_fnc_selectRandom);
 
 			if (_unit == leader _group) then
 			{
-				_unit addWeapon "arifle_TRG21_F";
+				_unit addWeapon "arifle_AK12_F";
 				_unit setRank "SERGEANT";
 			}
 			else
 			{
-				_unit addWeapon "arifle_TRG20_F";
+				_unit addWeapon "arifle_AK12_F";
 			};
 		};
 	};

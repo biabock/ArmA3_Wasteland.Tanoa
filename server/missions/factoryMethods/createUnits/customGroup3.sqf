@@ -6,7 +6,7 @@
 
 if (!isServer) exitWith {};
 
-private ["_group", "_pos", "_nbUnits", "_unitTypes", "_uPos", "_unit"];
+private ["_group", "_pos", "_nbUnits", "_unitTypes", "_uPos", "_unit", "_uniformTypes"];
 
 _group = _this select 0;
 _pos = _this select 1;
@@ -38,7 +38,8 @@ for "_i" from 1 to _nbUnits do
 	removeGoggles _unit;
 
 	_unit addVest "V_TacVest_blk_POLICE";
-	_unit addUniform "U_C_Driver_3";
+	_uniformTypes = ["U_I_C_Soldier_Para_1_F", "U_I_C_Soldier_Para_2_F", "U_I_C_Soldier_Para_3_F", "U_I_C_Soldier_Para_4_F", "U_I_C_Soldier_Para_5_F"];
+	_unit forceAddUniform (_uniformTypes call BIS_fnc_selectRandom);
 
 	switch (true) do
 	{

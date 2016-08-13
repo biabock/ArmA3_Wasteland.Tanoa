@@ -37,6 +37,7 @@ setLocationState = [_path, "setLocationState.sqf"] call mf_compile;
 setMissionState = [_path, "setMissionState.sqf"] call mf_compile;
 // Non Vanilla missions
 createCustomGroup3 = [_path, "createUnits\customGroup3.sqf"] call mf_compile; //hackers
+createIsisGroup = [_path, "createUnits\customIsisGroup.sqf"] call mf_compile;
 createRandomPilot = [_path, "createUnits\createRandomPilot.sqf"] call mf_compile; //hostilejet
 createsmugglerGroup = [_path, "createUnits\smugglerGroup.sqf"] call mf_compile;
 
