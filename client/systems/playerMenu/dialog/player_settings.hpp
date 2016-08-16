@@ -189,6 +189,14 @@ class playerSettings {
 			x = 0.02; y = 0.60;
 			w = 0.125; h = 0.033 * safezoneH;
 		};*/
+		
+		class TOParmaInfoButton : w_RscButton {
+			idc = -1;
+			text = "ArmaBrothers Info";
+			onButtonClick = "[] execVM 'addons\TOParmaInfo\loadTOParmaInfo.sqf'";
+			x = 0.228; y = 0.33;
+			w = 0.26; h = 0.033 * safezoneH;
+		};
 		class btnDistanceEffects : w_RscButton {
 			idc = -1;
 			text = "Effects";
