@@ -206,7 +206,7 @@ class playerSettings {
 		class btnDistanceCHVD : w_RscButton {
 			idc = -1;
 			text = "Viewdist.";
-			onButtonClick = "call CHVD_fnc_openDialog";
+			onButtonClick = "[] spawn TAWVD_fnc_openTAWVD;";
 			x = 0.02; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
