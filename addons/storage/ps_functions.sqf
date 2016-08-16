@@ -198,7 +198,7 @@ ps_access = {
   _box = [player, ps_container_class] call p_recreateStorageBox;
 
   if (isNil "_box") exitWith {
-    player commandChat "ERROR: Could not access private storage, please report this error to A3Armory.com.";
+    player commandChat "ERROR: Could not access private storage, please report this error to ArmaBrothers.com.";
   };
 
   _box attachTo [player, [0,0,3]];
