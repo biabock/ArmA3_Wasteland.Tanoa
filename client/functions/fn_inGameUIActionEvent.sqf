@@ -4,7 +4,7 @@
 //	@file Name: fn_inGameUIActionEvent.sqf
 //	@file Author: AgentRev
 
-params ["", "_unit", "", "_action", "","", "_showWindow", "","", "_menuOpen"];
+params ["_target", "_unit", "", "_action", "","", "_showWindow", "","", "_menuOpen"];
 private _handled = false;
 
 if (_unit == player && (_showWindow || _menuOpen)) then
@@ -37,7 +37,7 @@ if (_unit == player && (_showWindow || _menuOpen)) then
 			};
 		};
 
-		case (_action == "DisAssemble"):
+		case (_action == "DisAssemble" && {{_target isKindOf _x} count ["StaticMGWeapon","StaticGrenadeLauncher","StaticMortar"] > 0}):
 		{
 			if ({_handled isKindOf _x} count ["B_UAV_01_backpack_F","O_UAV_01_backpack_F","I_UAV_01_backpack_F", "B_Static_Designator_01_weapon_F", "O_Static_Designator_02_weapon_F"] > 0) exitWith {};
 			playSound "FD_CP_Not_Clear_F";
